@@ -4,5 +4,17 @@
     "title": "关于",
     "section": "",
     "text": ""
+  },
+  {
+    "href": "index.html",
+    "title": "日常记录",
+    "section": "",
+    "text": ""
+  },
+  {
+    "href": "refrence.html",
+    "title": "参考",
+    "section": "",
+    "text": "Z-Library: 全球最大的数字图书馆\nComputer Age Statistical Inference\nApacheCN\n《动手学深度学习》: 《Dive into Deep Learning》原书中的MXNet实现改为PyTorch实现\n强化学习\nMann-Kendall Test For Monotonic Trend"
   }
 ]

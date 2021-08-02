@@ -8,7 +8,7 @@ site:
     background: primary
     left:
       - href: index.qmd
-        text: 主页
+        text: "主页"
       - about.qmd
       - refrence.qmd
 
