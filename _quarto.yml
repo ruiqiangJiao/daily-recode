@@ -1,6 +1,6 @@
 project:
   type: site
-
+  output-dir: docs
 site:
   title: "日常记录"
   navbar:
