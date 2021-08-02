@@ -1,0 +1,20 @@
+project:
+  type: site
+
+site:
+  title: "日常记录"
+  navbar:
+    type: dark
+    background: primary
+    left:
+      - href: index.qmd
+        text: 主页
+      - about.qmd
+      - refrence.qmd
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+

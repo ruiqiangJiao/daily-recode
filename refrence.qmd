@@ -1,0 +1,23 @@
+---
+title: "参考"
+jupyter: python3
+---
+
+
+[Z-Library](https://1lib.limited/s/?): 全球最大的数字图书馆
+
+
+[Computer Age Statistical Inference](https://web.stanford.edu/~hastie/CASI_files/PDF/casi.pdf)
+
+
+[ApacheCN](https://apachecn.org/)
+
+
+[《动手学深度学习》](http://tangshusen.me/Dive-into-DL-PyTorch/#/): 《Dive into Deep Learning》原书中的MXNet实现改为PyTorch实现
+
+
+[强化学习](https://spinningup.readthedocs.io/zh_CN/latest/)
+
+
+[Mann-Kendall Test For Monotonic Trend](https://vsp.pnnl.gov/help/Vsample/Design_Trend_Mann_Kendall.htm)
+
