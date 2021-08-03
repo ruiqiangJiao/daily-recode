@@ -6,6 +6,7 @@ site:
   navbar:
     type: dark
     background: primary
+    search: true
     left:
       - href: index.qmd
         text: "主页"

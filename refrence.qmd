@@ -21,3 +21,12 @@ jupyter: python3
 
 [Mann-Kendall Test For Monotonic Trend](https://vsp.pnnl.gov/help/Vsample/Design_Trend_Mann_Kendall.htm)
 
+
+[pytorch handbook](https://github.com/zergtant/pytorch-handbook)
+
+
+[Learning from data](https://github.com/fengdu78/Learning-from-data)
+
+
+[Pytorch Tutorial](https://github.com/yunjey/pytorch-tutorial)
+
