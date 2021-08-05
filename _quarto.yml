@@ -3,6 +3,11 @@ project:
   output-dir: docs
 site:
   title: "日常记录"
+  site-url: https://ruiqiangjiao.github.io/daily-recode/
+  repo-url: https://github.com/ruiqiangJiao/daily-recode/
+  repo-actions: ["编辑"]
+  page-navigation: true
+  
   navbar:
     type: dark
     background: primary
@@ -12,7 +17,50 @@ site:
         text: "主页"
       - about.qmd
       - refrence.qmd
-
+      - sidebar:programming
+      - sidebar:algorithm
+      
+  sidebar:
+    - id: programming
+      title: "编程"
+      style: "docked"
+      background: light
+      collapse-level: 2
+      align: left
+      contents:
+        - section: "python"
+          contents:
+            - rmd/programming/python/about.qmd
+        - section: "R"
+          contents:
+            - rmd/programming/R/about.qmd
+        - section: "git"
+          contents:
+          - rmd/programming/git/refrence.qmd
+        - section: "spark"
+          contents:
+          - rmd/programming/spark/install.qmd
+        - section: 'Leet code'
+          contents:
+          - rmd/programming/leetcode/refrence.qmd
+        - section: 'software'
+          contents:
+          - rmd/programming/software/refrence.qmd
+         
+    - id: algorithm
+      title: "算法"
+      contents:
+        - section: "统计学"
+          contents:
+            - rmd/algorithm/statistics/elements_of_statistical_learning.qmd
+            - rmd/algorithm/statistics/isolation_forest.qmd
+            - rmd/algorithm/statistics/lof.qmd
+        - section: "强化学习"
+          contents:
+            - rmd/algorithm/reinforcement_learning/about.qmd
+        - section: "深度学习"
+          contents:
+            - rmd/algorithm/deep_learning/dive_into_deep_learning.qmd
 format:
   html:
     theme: cosmo

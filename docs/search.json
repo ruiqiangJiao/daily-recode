@@ -15,6 +15,78 @@
     "href": "refrence.html",
     "title": "参考",
     "section": "",
-    "text": "Z-Library: 全球最大的数字图书馆\nComputer Age Statistical Inference\nApacheCN\n《动手学深度学习》: 《Dive into Deep Learning》原书中的MXNet实现改为PyTorch实现\n强化学习\nMann-Kendall Test For Monotonic Trend\npytorch handbook\nLearning from data\nPytorch Tutorial"
+    "text": "Z-Library: 全球最大的数字图书馆\nComputer Age Statistical Inference\nApacheCN\n强化学习\nMann-Kendall Test For Monotonic Trend\npytorch handbook\nLearning from data\nPytorch Tutorial"
+  },
+  {
+    "href": "rmd\\algorithm\\reinforcement_learning\\about.html",
+    "title": "关于",
+    "section": "",
+    "text": ""
+  },
+  {
+    "href": "rmd\\algorithm\\statistics\\about.html",
+    "title": "关于",
+    "section": "",
+    "text": ""
+  },
+  {
+    "href": "rmd\\programming\\python\\about.html",
+    "title": "关于",
+    "section": "",
+    "text": ""
+  },
+  {
+    "href": "rmd\\programming\\R\\about.html",
+    "title": "关于",
+    "section": "",
+    "text": ""
+  },
+  {
+    "href": "rmd\\algorithm\\statistics\\isolation_forest.html",
+    "title": "孤立森林",
+    "section": "",
+    "text": "孤立森林\n孤立森林扩展\n代码"
+  },
+  {
+    "href": "rmd\\algorithm\\statistics\\elements_of_statistical_learning.html",
+    "title": "The Elements of Statistical Learning",
+    "section": "",
+    "text": "The Elements of Statistical Learning"
+  },
+  {
+    "href": "rmd\\algorithm\\statistics\\lof.html",
+    "title": "局部离群因子",
+    "section": "",
+    "text": "局部离群因子"
+  },
+  {
+    "href": "rmd\\programming\\git\\refrence.html",
+    "title": "精通Git(第二版简体中文)",
+    "section": "",
+    "text": "精通Git(第二版简体中文)\nGithub Docs"
+  },
+  {
+    "href": "rmd\\algorithm\\deep_learning\\dive_into_deep_learning.html",
+    "title": "动手学深度学习",
+    "section": "",
+    "text": "《动手学深度学习》: 《Dive into Deep Learning》原书中的MXNet实现改为PyTorch实现"
+  },
+  {
+    "href": "rmd\\programming\\spark\\install.html",
+    "title": "安装",
+    "section": "",
+    "text": "Windows平台下单机Spark环境搭建\njar 包\nLearning Spark"
+  },
+  {
+    "href": "rmd\\programming\\leetcode\\refrence.html",
+    "title": "Leet code 参考资料",
+    "section": "",
+    "text": "SnailTyan"
+  },
+  {
+    "href": "rmd\\programming\\software\\refrence.html",
+    "title": "Vim",
+    "section": "",
+    "text": "VIM 中文帮助手册"
   }
 ]

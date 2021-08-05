@@ -1,0 +1,6 @@
+---
+title: "局部离群因子"
+jupyter: python3
+---
+
+[局部离群因子](https://www.dbs.ifi.lmu.de/Publikationen/Papers/LOF.pdf)

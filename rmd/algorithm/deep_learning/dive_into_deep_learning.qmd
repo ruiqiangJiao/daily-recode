@@ -1,0 +1,7 @@
+---
+title: "动手学深度学习"
+jupyter: python3
+---
+
+
+[《动手学深度学习》](http://tangshusen.me/Dive-into-DL-PyTorch/#/): 《Dive into Deep Learning》原书中的MXNet实现改为PyTorch实现
