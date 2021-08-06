@@ -1,0 +1,41 @@
+---
+title: "读取 MySQL"
+jupyter: python3
+---
+
+
+## 测试样例
+
+```python
+# - *- coding= utf-8 -*-
+
+from pyspark.sql import SparkSession, SQLContext
+from pyspark import SparkConf, SparkContext
+
+
+def get_mysql():
+    prop = {'user': '', 'password': '', 'driver': 'com.mysql.jdbc.Driver'}
+    url = 'jdbc:mysql://{0}:{1}/{2}'.format("host", "port", "database")
+    df_terminal_detail = spark_session.read.jdbc(url=url, table='', properties=prop)
+    
+    # df_termianl_detail = spark_session.read.format("jdbc")\
+    #                                      .option("url", "jdbc:postgresql:postgres")\
+    #                                       .option("dbtable", "")\
+    #                                       .option("user", "")\
+    #                                       .option("password", "")\
+    #                                       .load()
+    return df_terminal_detail
+
+
+if __name__ == '__main__':
+    conf = SparkConf()
+    conf.setAppName('user_behavior')
+    conf.set('spark.serializer', 'org.apache.spark.serializer.KryoSerializer')
+    conf.set('spark.kryoserializer.buffer.max', '512m')
+    spark_session = SparkSession.builder.config(conf=conf).getOrCreate()
+    sc = spark_session.sparkContext
+    df_mysql = get_mysql()
+
+```
+
+
