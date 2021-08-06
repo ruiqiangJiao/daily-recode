@@ -1,0 +1,105 @@
+---
+title: "读取Hbase"
+jupyter: python3
+---
+
+# 读取Hbase
+
+## 安装包
+
+### python 包
+
+- pyspark==3.1.1
+
+- protobuf==3.17.0
+
+- py4j==0.10.9
+
+### jar 包
+
+- hbase-common-2.0.0.3.0.0.0-1634.jar
+
+- hbase-client-2.0.0.3.0.0.0-1634.jar
+
+- hbase-mapreduce-2.0.0.3.0.0.0-1634.jar
+
+- hbase-shaded-miscellaneous-2.1.0.jar
+
+- hbase-protocol-2.0.0.3.0.0.0-1634.jar
+
+- hbase-protocol-shaded-2.0.0.3.0.0.0-1634.jar
+
+- hbase-shaded-protobuf-2.1.0.jar
+
+- hbase-shaded-netty-2.1.0.jar
+
+- spark-examples_2.11-1.6.0-typesafe-001.jar
+
+  查询 Hbase 得到的 rowKey 类型 ImmutableBytesWritable 和结果做类型转换成 string
+
+上面的 jar 包放置在 spark-script/lib/python3.7/site-packages/pyspark/jars 目录下面
+
+## 测试样例
+
+```python
+from pyspark.sql import SparkSession
+from pyspark import SparkConf
+import TerminalLocationReport_pb2 as TerminalLocationReportProto
+import json
+import sys, os
+import codecs
+
+def get_rdd_element(rdd):
+    row_values = json.loads(rdd[1])['value']
+    a = codecs.escape_decode(row_values.encode())[0]                
+    report = TerminalLocationReportProto.TerminalLocationReport()
+    report.ParseFromString(a)
+    return report
+
+def get_hbase_terminal_info():
+    """
+    hbase_conf 中的参数配置
+    zookeeper集群地址 
+    hbase master的元数据信息都存在zookeeper中，读取zookeeper就能锁定你要读的数据在hdfs的哪个位置；
+    指定到zookeeper的hbase原数据目录下去读；读取的表名
+    
+    """
+    hbase_conf = {
+                 'hbase.zookeeper.quorum':'b-bd-cd1-01.local.lan,b-bd-cd1-02.local.lan,b-bd-cd1-03.local.lan',                                      
+                 'zookeeper.znode.parent': '/hbase-unsecure',
+                 'hbase.mapreduce.inputtable': ''
+    }
+    
+    """
+    newAPIHadoopRDD用sparkContext读取hbase表，依次配置：指定读取表用TableInputFormat类；
+    rowkey的返回类型: 数据返回类型；rowkey返回类型强制转换为string；数据返回类型强制转换为string
+    """
+
+    data_rdd = sc.newAPIHadoopRDD('org.apache.hadoop.hbase.mapreduce.TableInputFormat',
+                                   'org.apache.hadoop.hbase.io.ImmutableBytesWritable',
+                                   'org.apache.hadoop.hbase.client.Result',
+                                   'org.apache.spark.examples.pythonconverters.ImmutableBytesWritableToStringConverter',
+                                   'org.apache.spark.examples.pythonconverters.HBaseResultToStringConverter',
+                              conf=hbase_conf)\
+                  .map(get_rdd_element)
+    return data_rdd
+    
+    
+if __name__ == "__main__":
+   # add config
+   conf = SparkConf()                                # 初始化 
+   conf.setAppName('read-hbase')                     # 设置程序名称
+   # 设置 spark 采取 Kryo 序列化
+   conf.set('spark.serializer', 'org.apache.spark.serializer.KryoSerializer')
+   conf.set('spark.kryoserializer.buffer.max', '512m')
+   # spark_session 用于读取多种数据源(mysql、hdfs、Hive)
+   spark_session = SparkSession.builder.config(conf=conf).getOrCreate()
+   # spark_session 中的 sparkContext 对象可读取 hbase、hdfs
+   sc = spark_session.sparkContext
+   rdd_data = get_hbase_terminal_info()
+   print(rdd_data.take(1))
+
+
+```
+
+

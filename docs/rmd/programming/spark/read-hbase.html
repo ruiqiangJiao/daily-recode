@@ -3,7 +3,7 @@
   <meta charset="utf-8">
   <meta name="generator" content="quarto-(Local Development)">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-  <title>日常记录 – 安装</title>
+  <title>日常记录 – 读取Hbase</title>
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
@@ -85,8 +85,8 @@
   <script src="../../../site_libs/quarto-search/autocomplete.min.js"></script>
   <script src="../../../site_libs/quarto-search/fuse.min.js"></script>
   <script src="../../../site_libs/quarto-search/quarto-search.js"></script>
-  <link href="../../../rmd/programming/spark/read-hbase.html" rel="next">
-  <link href="../../../rmd/programming/git/refrence.html" rel="prev">
+  <link href="../../../rmd/programming/spark/submit-run-task.html" rel="next">
+  <link href="../../../rmd/programming/spark/install.html" rel="prev">
   <script src="../../../site_libs/quarto-html/quarto.js"></script>
   <script src="../../../site_libs/quarto-html/popper.min.js"></script>
   <script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -142,7 +142,7 @@
 </nav>
 <nav class="quarto-secondary-nav py-2 d-lg-none d-md-block " data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <div class="container-fluid d-flex justify-content-between">
-    <h1 class="quarto-secondary-nav-title mb-0 fs-3 d-inline">安装</h1>
+    <h1 class="quarto-secondary-nav-title mb-0 fs-3 d-inline">读取Hbase</h1>
     <button type="button" class="quarto-btn-toggle btn d-lg-none py-0 px-1 d-inline-block border-0 ">
       <i class="bi bi-chevron-right"></i>
     </button>
@@ -218,10 +218,10 @@
       <div class="collapse  show" id="spark-collapse">
         <ul class="list-unstyled sidebar-item-contents">
           <li class="sidebar-item">
-  <a href="../../../rmd/programming/spark/install.html" class="active">安装</a>
+  <a href="../../../rmd/programming/spark/install.html" class="">安装</a>
 </li>
           <li class="sidebar-item">
-  <a href="../../../rmd/programming/spark/read-hbase.html" class="">读取Hbase</a>
+  <a href="../../../rmd/programming/spark/read-hbase.html" class="active">读取Hbase</a>
 </li>
           <li class="sidebar-item">
   <a href="../../../rmd/programming/spark/submit-run-task.html" class="">服务器提交运行任务</a>
@@ -271,72 +271,124 @@
   <div id="quarto-toc-sidebar" class="col col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-toc order-last"><nav id="TOC" role="doc-toc">
 <h2 id="toc-title">On this page</h2>
 <ul>
-<li><a href="#pyspark中的python依赖管理" class="nav-link active" data-scroll-target="#pyspark中的python依赖管理">pyspark中的python依赖管理</a></li>
+<li><a href="#读取hbase" class="nav-link active" data-scroll-target="#读取hbase">读取Hbase</a>
+<ul class="collapse">
+<li><a href="#安装包" class="nav-link" data-scroll-target="#安装包">安装包</a>
+<ul class="collapse">
+<li><a href="#python-包" class="nav-link" data-scroll-target="#python-包">python 包</a></li>
+<li><a href="#jar-包" class="nav-link" data-scroll-target="#jar-包">jar 包</a></li>
+</ul></li>
+<li><a href="#测试样例" class="nav-link" data-scroll-target="#测试样例">测试样例</a></li>
+</ul></li>
 </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"></div></div></nav></div>
   <div class="col mx-auto col-sm-12 col-md-9 col-lg-7 col-xl-7 px-lg-4 pe-xxl-4 ps-xxl-0">
 <main>
 <header id="title-block-header">
-<h1 class="title d-none d-lg-block display-7">安装</h1>
+<h1 class="title d-none d-lg-block display-7">读取Hbase</h1>
 </header>
 
-<section id="pyspark中的python依赖管理" class="level1">
-<h1>pyspark中的python依赖管理</h1>
-<p>目前管理pyspark的python依赖有两种方式：</p>
-<p>1.打包虚拟环境成压缩包,用–py-files或者–archives提交压缩虚拟环境。</p>
-<p>2.pyspark自己生成虚拟环境的方式，仅限于yarn client和yarn cluster模式。</p>
-<p><a href="https://community.cloudera.com/t5/Community-Articles/Using-VirtualEnv-with-PySpark/ta-p/245932">Using VirtualEnv with PySpark</a></p>
-<p>我们是本地模式运行spark所以用第一种方式，管理python依赖的方式也有好几种如canda，Virtualenv，pex都可以，可以参考这篇文章：https://。databricks.com/blog/2020/12/22/how-to-manage-python-dependencies-in-pyspark.html我们尝试用比较熟悉的方式Virtualenv 管理依赖。</p>
-<p><a href="https://databricks.com/blog/2020/12/22/how-to-manage-python-dependencies-in-pyspark.html">How to Manage Python Dependencies in PySpark</a></p>
-<p>我们此次用的是python 3.x来创建虚拟环境，进入虚拟环境，安装需要的python包，打包虚拟环境</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>python3<span class="fl">.5</span> <span class="op">-</span>m venv pyspark_venv</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>source pyspark_venv<span class="op">/</span><span class="bu">bin</span><span class="op">/</span>activate</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>pip install pyarrow pandas venv<span class="op">-</span>pack</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>venv<span class="op">-</span>pack <span class="op">-</span>o pyspark_venv.tar.gz</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="callout-warning callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-caption-container flex-fill">
-Warning
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>我们前面提到打包提交的方式可以用–py-files配置，也可以用–archives来配置；用–archives配置时要加上#environment，用–py-files配置时不需要，同时–py-file还支持xxx.zip文件及多个python files，–archives也支持多个文件。</p>
-</div>
-</div>
-<div class="callout-warning callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-caption-container flex-fill">
-Warning
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>目前测试发现仅能在虚拟环境内部才能执行带有python依赖的pyspark程序，退出虚拟环境执行不了。这个问题是因为退出虚拟环境提交pyspark用的是python xxxx.py去执行的，本地python命令指向的是python 2.x，而这个2.x的系统python环境比如没有装pandas就会报错：ImportError: No module named pandas。解决这一问题需要在提交命令中加入配置</p>
-</div>
-</div>
-<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="op">--</span>conf <span class="st">"spark.pyspark.python=/usr/bin/python3.5"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>完整的命令是：</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>spark<span class="op">-</span>submit <span class="op">--</span>master local[<span class="op">*</span>] <span class="op">--</span>num<span class="op">-</span>executors <span class="dv">20</span> <span class="op">--</span>executor<span class="op">-</span>cores <span class="dv">2</span> <span class="op">--</span>executor<span class="op">-</span>memory <span class="dv">10</span><span class="er">g</span> <span class="op">--</span>driver<span class="op">-</span>memory <span class="dv">6</span><span class="er">g</span> <span class="op">--</span>driver<span class="op">-</span>cores <span class="dv">2</span> <span class="op">--</span>conf <span class="st">"spark.pyspark.python=/usr/bin/python3.5"</span> <span class="op">--</span>archives <span class="op">/</span>usr<span class="op">/</span>local<span class="op">/</span>lib<span class="op">/</span>python3<span class="fl">.5</span><span class="op">/</span>pyspark_venv.tar.gz<span class="co">#environment /data/read_hbase.py</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><a href="https://yxnchen.github.io/technique/Windows%E5%B9%B3%E5%8F%B0%E4%B8%8B%E5%8D%95%E6%9C%BASpark%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">Windows平台下单机Spark环境搭建</a></p>
-<p><a href="https://mvnrepository.com/">jar 包</a></p>
-<p><a href="https://waltyou.github.io/Learning-Spark-0/">Learning Spark</a></p>
+<section id="读取hbase" class="level1">
+<h1>读取Hbase</h1>
+<section id="安装包" class="level2">
+<h2 class="anchored" data-anchor-id="安装包">安装包</h2>
+<section id="python-包" class="level3">
+<h3 class="anchored" data-anchor-id="python-包">python 包</h3>
+<ul>
+<li><p>pyspark==3.1.1</p></li>
+<li><p>protobuf==3.17.0</p></li>
+<li><p>py4j==0.10.9</p></li>
+</ul>
+</section>
+<section id="jar-包" class="level3">
+<h3 class="anchored" data-anchor-id="jar-包">jar 包</h3>
+<ul>
+<li><p>hbase-common-2.0.0.3.0.0.0-1634.jar</p></li>
+<li><p>hbase-client-2.0.0.3.0.0.0-1634.jar</p></li>
+<li><p>hbase-mapreduce-2.0.0.3.0.0.0-1634.jar</p></li>
+<li><p>hbase-shaded-miscellaneous-2.1.0.jar</p></li>
+<li><p>hbase-protocol-2.0.0.3.0.0.0-1634.jar</p></li>
+<li><p>hbase-protocol-shaded-2.0.0.3.0.0.0-1634.jar</p></li>
+<li><p>hbase-shaded-protobuf-2.1.0.jar</p></li>
+<li><p>hbase-shaded-netty-2.1.0.jar</p></li>
+<li><p>spark-examples_2.11-1.6.0-typesafe-001.jar</p>
+<p>查询 Hbase 得到的 rowKey 类型 ImmutableBytesWritable 和结果做类型转换成 string</p></li>
+</ul>
+<p>上面的 jar 包放置在 spark-script/lib/python3.7/site-packages/pyspark/jars 目录下面</p>
+</section>
+</section>
+<section id="测试样例" class="level2">
+<h2 class="anchored" data-anchor-id="测试样例">测试样例</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pyspark.sql <span class="im">import</span> SparkSession</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pyspark <span class="im">import</span> SparkConf</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> TerminalLocationReport_pb2 <span class="im">as</span> TerminalLocationReportProto</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> json</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sys, os</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> codecs</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> get_rdd_element(rdd):</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    row_values <span class="op">=</span> json.loads(rdd[<span class="dv">1</span>])[<span class="st">'value'</span>]</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    a <span class="op">=</span> codecs.escape_decode(row_values.encode())[<span class="dv">0</span>]                </span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    report <span class="op">=</span> TerminalLocationReportProto.TerminalLocationReport()</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    report.ParseFromString(a)</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> report</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> get_hbase_terminal_info():</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="co">    hbase_conf 中的参数配置</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="co">    zookeeper集群地址 </span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="co">    hbase master的元数据信息都存在zookeeper中，读取zookeeper就能锁定你要读的数据在hdfs的哪个位置；</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="co">    指定到zookeeper的hbase原数据目录下去读；读取的表名</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="co">    </span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>    hbase_conf <span class="op">=</span> {</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>                 <span class="st">'hbase.zookeeper.quorum'</span>:<span class="st">'b-bd-cd1-01.local.lan,b-bd-cd1-02.local.lan,b-bd-cd1-03.local.lan'</span>,                                      </span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>                 <span class="st">'zookeeper.znode.parent'</span>: <span class="st">'/hbase-unsecure'</span>,</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>                 <span class="st">'hbase.mapreduce.inputtable'</span>: <span class="st">''</span></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a><span class="co">    newAPIHadoopRDD用sparkContext读取hbase表，依次配置：指定读取表用TableInputFormat类；</span></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a><span class="co">    rowkey的返回类型: 数据返回类型；rowkey返回类型强制转换为string；数据返回类型强制转换为string</span></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>    data_rdd <span class="op">=</span> sc.newAPIHadoopRDD(<span class="st">'org.apache.hadoop.hbase.mapreduce.TableInputFormat'</span>,</span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>                                   <span class="st">'org.apache.hadoop.hbase.io.ImmutableBytesWritable'</span>,</span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>                                   <span class="st">'org.apache.hadoop.hbase.client.Result'</span>,</span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>                                   <span class="st">'org.apache.spark.examples.pythonconverters.ImmutableBytesWritableToStringConverter'</span>,</span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>                                   <span class="st">'org.apache.spark.examples.pythonconverters.HBaseResultToStringConverter'</span>,</span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>                              conf<span class="op">=</span>hbase_conf)<span class="op">\</span></span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>                  .<span class="bu">map</span>(get_rdd_element)</span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> data_rdd</span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">"__main__"</span>:</span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>   <span class="co"># add config</span></span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>   conf <span class="op">=</span> SparkConf()                                <span class="co"># 初始化 </span></span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>   conf.setAppName(<span class="st">'read-hbase'</span>)                     <span class="co"># 设置程序名称</span></span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>   <span class="co"># 设置 spark 采取 Kryo 序列化</span></span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>   conf.<span class="bu">set</span>(<span class="st">'spark.serializer'</span>, <span class="st">'org.apache.spark.serializer.KryoSerializer'</span>)</span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>   conf.<span class="bu">set</span>(<span class="st">'spark.kryoserializer.buffer.max'</span>, <span class="st">'512m'</span>)</span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>   <span class="co"># spark_session 用于读取多种数据源(mysql、hdfs、Hive)</span></span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>   spark_session <span class="op">=</span> SparkSession.builder.config(conf<span class="op">=</span>conf).getOrCreate()</span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>   <span class="co"># spark_session 中的 sparkContext 对象可读取 hbase、hdfs</span></span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>   sc <span class="op">=</span> spark_session.sparkContext</span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>   rdd_data <span class="op">=</span> get_hbase_terminal_info()</span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>   <span class="bu">print</span>(rdd_data.take(<span class="dv">1</span>))</span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <!-- -->
+</section>
 </section>
 </main>
 <div class="page-navigation page-navigation-docked">
   <div class="nav-page nav-page-previous">
-      <a href="../../../rmd/programming/git/refrence.html">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">精通Git(第二版简体中文)</span>
+      <a href="../../../rmd/programming/spark/install.html">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">安装</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../../rmd/programming/spark/read-hbase.html">
-        <span class="nav-page-text">读取Hbase</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../../rmd/programming/spark/submit-run-task.html">
+        <span class="nav-page-text">服务器提交运行任务</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </div>

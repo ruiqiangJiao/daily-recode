@@ -40,6 +40,8 @@ site:
         - section: "spark"
           contents:
           - rmd/programming/spark/install.qmd
+          - rmd/programming/spark/read-hbase.qmd
+          - rmd/programming/spark/submit-run-task.qmd
         - section: 'Leet code'
           contents:
           - rmd/programming/leetcode/refrence.qmd

@@ -3,6 +3,55 @@ title: "安装"
 jupyter: python3
 ---
 
+# pyspark中的python依赖管理
+
+
+目前管理pyspark的python依赖有两种方式：
+
+1.打包虚拟环境成压缩包,用--py-files或者--archives提交压缩虚拟环境。
+
+2.pyspark自己生成虚拟环境的方式，仅限于yarn client和yarn cluster模式。
+
+[Using VirtualEnv with PySpark](https://community.cloudera.com/t5/Community-Articles/Using-VirtualEnv-with-PySpark/ta-p/245932)
+
+我们是本地模式运行spark所以用第一种方式，管理python依赖的方式也有好几种如canda，Virtualenv，pex都可以，可以参考这篇文章：https://。databricks.com/blog/2020/12/22/how-to-manage-python-dependencies-in-pyspark.html我们尝试用比较熟悉的方式Virtualenv 管理依赖。
+
+[How to Manage Python Dependencies in PySpark](https://databricks.com/blog/2020/12/22/how-to-manage-python-dependencies-in-pyspark.html)
+
+
+我们此次用的是python 3.x来创建虚拟环境，进入虚拟环境，安装需要的python包，打包虚拟环境
+
+```python
+python3.5 -m venv pyspark_venv
+source pyspark_venv/bin/activate
+pip install pyarrow pandas venv-pack
+venv-pack -o pyspark_venv.tar.gz
+```
+
+:::{.callout-warning}
+
+
+我们前面提到打包提交的方式可以用--py-files配置，也可以用--archives来配置；用--archives配置时要加上#environment，用--py-files配置时不需要，同时--py-file还支持xxx.zip文件及多个python files，--archives也支持多个文件。
+
+:::
+
+
+:::{.callout-warning}
+目前测试发现仅能在虚拟环境内部才能执行带有python依赖的pyspark程序，退出虚拟环境执行不了。这个问题是因为退出虚拟环境提交pyspark用的是python xxxx.py去执行的，本地python命令指向的是python 2.x，而这个2.x的系统python环境比如没有装pandas就会报错：ImportError: No module named pandas。解决这一问题需要在提交命令中加入配置
+:::
+
+```python
+--conf "spark.pyspark.python=/usr/bin/python3.5"
+
+```
+
+完整的命令是：
+
+```python
+spark-submit --master local[*] --num-executors 20 --executor-cores 2 --executor-memory 10g --driver-memory 6g --driver-cores 2 --conf "spark.pyspark.python=/usr/bin/python3.5" --archives /usr/local/lib/python3.5/pyspark_venv.tar.gz#environment /data/read_hbase.py
+
+```
+
 [Windows平台下单机Spark环境搭建](https://yxnchen.github.io/technique/Windows%E5%B9%B3%E5%8F%B0%E4%B8%8B%E5%8D%95%E6%9C%BASpark%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/)
 
 
@@ -10,3 +59,5 @@ jupyter: python3
 
 
 [Learning Spark](https://waltyou.github.io/Learning-Spark-0/)
+
+
