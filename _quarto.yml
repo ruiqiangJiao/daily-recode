@@ -30,7 +30,8 @@ site:
       contents:
         - section: "python"
           contents:
-            - rmd/programming/python/about.qmd
+            - rmd/programming/python/read-redis-cluster.qmd
+            - rmd/programming/python/read-mysql.qmd
         - section: "R"
           contents:
             - rmd/programming/R/about.qmd

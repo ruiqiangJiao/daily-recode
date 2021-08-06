@@ -1,0 +1,26 @@
+---
+title: "读取 Redis 集群"
+jupyter: python3
+---
+
+
+## 代码样例
+
+```python
+# -*- coding=utf-8 -*-
+
+from rediscluster import StrictRedisCluster
+import TerminalLocationReport_pb2 as TerminalLocationReport
+
+
+if __name__ == '__main__':
+    nodes = [{'host': h1, 'port': p1},
+             {'host': h2, 'port': p2},
+             {'host': h3, 'port': p3}]
+    k = 'a:t'
+    redis_conn = StrictRedisCluster(startup_nodes=nodes, decode_responses=False, skip_full_coverage_check=True)
+    redis_data = redis_conn.get(k)
+    lr = TerminalLocationReport.TerminalLocationReport()
+    lr.ParseFromString(redis_data)
+```
+

@@ -1,0 +1,50 @@
+---
+title: "读取 MySQL"
+jupyter: python3
+---
+
+
+## 代码样例
+
+```python
+# - *- coding= utf-8 -*-
+
+import pymysql
+import pandas as pd
+from sqlalchemy import create_engine
+
+mysql_config = {"host": "", "database": "", "user": "", "password": "", "port": 2222}
+
+
+# 获取 mysql 数据
+def get_mysql_data(host, database, user, password, port, sql_cmd):
+    db_con = pymysql.connect(
+        host=host,
+        database=database,
+        user=user,
+        password=password,
+        port=port,
+        charset='utf8')
+    df_data = pd.read_sql(sql_cmd, db_con)
+    return df_data
+
+
+def reader_sql():
+    engine = create_engine('mysql+pymysql://{0}:{1}@{2}:{3}/{4}?charset=utf8'.format(mysql_config['user'],
+                                                                                     mysql_config['password'],
+                                                                                     mysql_config['host'],
+                                                                                     mysql_config['port'],
+                                                                                     mysql_config['database']))
+    df = pd.read_sql_query("select * from table_name limit 10", engine)
+    return df
+
+
+if __name__ == '__main__':
+    df_mysql_data = get_mysql_data(host=mysql_config['host'],
+                                   database=mysql_config['database'],
+                                   user=mysql_config['user'],
+                                   password=mysql_config['password'],
+                                   port=mysql_config['port'],
+                                   sql_cmd="select * from table_name limit 10")
+```
+
