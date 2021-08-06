@@ -3,8 +3,6 @@ title: "读取Hbase"
 jupyter: python3
 ---
 
-# 读取Hbase
-
 ## 安装包
 
 ### python 包

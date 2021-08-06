@@ -271,14 +271,11 @@
   <div id="quarto-toc-sidebar" class="col col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-toc order-last"><nav id="TOC" role="doc-toc">
 <h2 id="toc-title">On this page</h2>
 <ul>
-<li><a href="#服务器提交运行任务" class="nav-link active" data-scroll-target="#服务器提交运行任务">服务器提交运行任务</a>
-<ul class="collapse">
-<li><a href="#local模式" class="nav-link" data-scroll-target="#local模式">local模式</a></li>
+<li><a href="#local模式" class="nav-link active" data-scroll-target="#local模式">local模式</a></li>
 <li><a href="#standalone模式" class="nav-link" data-scroll-target="#standalone模式">standalone模式</a></li>
 <li><a href="#yarn-client模式" class="nav-link" data-scroll-target="#yarn-client模式">yarn client模式</a></li>
 <li><a href="#yarn-cluster模式" class="nav-link" data-scroll-target="#yarn-cluster模式">yarn cluster模式</a></li>
 <li><a href="#mesos模式" class="nav-link" data-scroll-target="#mesos模式">mesos模式</a></li>
-</ul></li>
 </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"></div></div></nav></div>
   <div class="col mx-auto col-sm-12 col-md-9 col-lg-7 col-xl-7 px-lg-4 pe-xxl-4 ps-xxl-0">
@@ -287,8 +284,6 @@
 <h1 class="title d-none d-lg-block display-7">服务器提交运行任务</h1>
 </header>
 
-<section id="服务器提交运行任务" class="level1">
-<h1>服务器提交运行任务</h1>
 <p>目前我们提交并运行pyspark的模式目前有5种，下面我们依次说明每一种模式.</p>
 <section id="local模式" class="level2">
 <h2 class="anchored" data-anchor-id="local模式">local模式</h2>
@@ -387,7 +382,6 @@ Warning
 <p>该模式是spark官方推荐的运行模式。但目前公司未使用，mosos也是一个集群资源管理器，mesos提供粗粒度和细粒度的资源管理模式，但是目前由于细粒度的管理模式相对繁琐，已弃用，保留的粗粒度管理模式和yarn的资源管理很类似，公司选择了yarn来管理，所以这里我们就不细说了，可以自行去查资料了解。</p>
 <p>目前从上面4种运行模式来看，pyspark的运行速度都赶不上spark，因为涉及python进程和jvm进程数据交互，所以建议从pyspark熟悉后采用spark来执行，因为api几乎都是一样的。</p>
 <!-- -->
-</section>
 </section>
 </main>
 <div class="page-navigation page-navigation-docked">
