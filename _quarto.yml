@@ -2,10 +2,10 @@ project:
   type: site
   output-dir: docs
 site:
-  title: "日常记录"
+  title: ""
   site-url: https://ruiqiangjiao.github.io/daily-recode/
   repo-url: https://github.com/ruiqiangJiao/daily-recode/
-  repo-actions: ["编辑"]
+  repo-actions: [edit]
   page-navigation: true
   
   navbar:
@@ -32,6 +32,7 @@ site:
           contents:
             - rmd/programming/python/read-redis-cluster.qmd
             - rmd/programming/python/read-mysql.qmd
+            - rmd/programming/python/frequent-function.qmd
         - section: "R"
           contents:
             - rmd/programming/R/about.qmd
@@ -47,9 +48,10 @@ site:
         - section: 'Leet code'
           contents:
           - rmd/programming/leetcode/refrence.qmd
-        - section: 'software'
+        - section: '软件'
           contents:
-          - rmd/programming/software/refrence.qmd
+          - rmd/programming/software/vim.qmd
+          - rmd/programming/software/latex.qmd
          
     - id: algorithm
       title: "算法"
@@ -59,12 +61,17 @@ site:
             - rmd/algorithm/statistics/elements_of_statistical_learning.qmd
             - rmd/algorithm/statistics/isolation_forest.qmd
             - rmd/algorithm/statistics/lof.qmd
+            - rmd/algorithm/statistics/XGboost.qmd
         - section: "强化学习"
           contents:
             - rmd/algorithm/reinforcement_learning/about.qmd
         - section: "深度学习"
           contents:
             - rmd/algorithm/deep_learning/dive_into_deep_learning.qmd
+        - section: "其它"
+          contents:
+            - rmd/algorithm/deep_learning/slam.qmd
+            - rmd/algorithm/deep_learning/geohash.qmd
 format:
   html:
     theme: cosmo

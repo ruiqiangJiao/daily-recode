@@ -1,0 +1,36 @@
+---
+title: "常用方法"
+jupyter: python3
+---
+
+
+## 分组排序
+
+```{python}
+import pandas as pd
+df = pd.DataFrame({'Sp':['a','b','c','d','e','f'], 'Mt':['s1', 's1', 's2','s2','s2','s3'], 'Value':[1,2,3,4,5,6], 'Count':[3,2,5,10,10,6]})
+df
+```
+
+
+```{python}
+df.sort_values('Count', ascending=False).groupby('Mt', as_index=False).first()
+```
+
+
+## 同一个组进行合并
+
+```{python}
+series = df.groupby(by='Mt',as_index=True).apply(lambda p:[','.join(p['Sp'])])
+df_result = pd.DataFrame({'Mt':series.index, 'Sp': series.values})
+df_result
+```
+
+
+[pandarallel](https://github.com/nalepae/pandarallel)
+
+[paratext](https://github.com/wiseio/paratext)
+
+[Python 数据分析](https://seancheney.gitbook.io/python-for-data-analysis-2nd/)
+
+[颜色色卡](https://www.colorhexa.com/)

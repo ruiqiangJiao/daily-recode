@@ -7,9 +7,9 @@
   },
   {
     "href": "index.html",
-    "title": "日常记录",
+    "title": "主页",
     "section": "",
-    "text": "主页"
+    "text": ""
   },
   {
     "href": "refrence.html",
@@ -18,34 +18,28 @@
     "text": "Z-Library: 全球最大的数字图书馆\nComputer Age Statistical Inference\nApacheCN\n强化学习\nMann-Kendall Test For Monotonic Trend\npytorch handbook\nLearning from data\nPytorch Tutorial"
   },
   {
+    "href": "rmd\\algorithm\\deep_learning\\dive_into_deep_learning.html",
+    "title": "动手学深度学习",
+    "section": "",
+    "text": "《动手学深度学习》: 《Dive into Deep Learning》原书中的MXNet实现改为PyTorch实现\n参考资料\nCSBook"
+  },
+  {
+    "href": "rmd\\algorithm\\other\\geohash.html",
+    "title": "geohash",
+    "section": "",
+    "text": "GeoHash算法详解及其实现\nGeoHash原理和可视化显示\n高德 Geohash\ngeohash 精度"
+  },
+  {
+    "href": "rmd\\algorithm\\other\\slam.html",
+    "title": "slam",
+    "section": "",
+    "text": "slam"
+  },
+  {
     "href": "rmd\\algorithm\\reinforcement_learning\\about.html",
     "title": "关于",
     "section": "",
     "text": ""
-  },
-  {
-    "href": "rmd\\algorithm\\statistics\\about.html",
-    "title": "关于",
-    "section": "",
-    "text": ""
-  },
-  {
-    "href": "rmd\\programming\\python\\about.html",
-    "title": "关于",
-    "section": "",
-    "text": ""
-  },
-  {
-    "href": "rmd\\programming\\R\\about.html",
-    "title": "关于",
-    "section": "",
-    "text": ""
-  },
-  {
-    "href": "rmd\\algorithm\\statistics\\isolation_forest.html",
-    "title": "孤立森林",
-    "section": "",
-    "text": "孤立森林\n孤立森林扩展\n代码"
   },
   {
     "href": "rmd\\algorithm\\statistics\\elements_of_statistical_learning.html",
@@ -54,10 +48,22 @@
     "text": "The Elements of Statistical Learning"
   },
   {
+    "href": "rmd\\algorithm\\statistics\\isolation_forest.html",
+    "title": "孤立森林",
+    "section": "",
+    "text": "孤立森林\n孤立森林扩展\n代码"
+  },
+  {
     "href": "rmd\\algorithm\\statistics\\lof.html",
     "title": "局部离群因子",
     "section": "",
     "text": "局部离群因子"
+  },
+  {
+    "href": "rmd\\algorithm\\statistics\\XGboost.html",
+    "title": "XGboost",
+    "section": "",
+    "text": "XGboost"
   },
   {
     "href": "rmd\\programming\\git\\refrence.html",
@@ -66,10 +72,52 @@
     "text": "精通Git(第二版简体中文)\nGithub Docs"
   },
   {
-    "href": "rmd\\algorithm\\deep_learning\\dive_into_deep_learning.html",
-    "title": "动手学深度学习",
+    "href": "rmd\\programming\\leetcode\\refrence.html",
+    "title": "Leet code 参考资料",
     "section": "",
-    "text": "《动手学深度学习》: 《Dive into Deep Learning》原书中的MXNet实现改为PyTorch实现"
+    "text": "SnailTyan"
+  },
+  {
+    "href": "rmd\\programming\\python\\frequent-function.html#分组排序",
+    "title": "常用方法",
+    "section": "分组排序",
+    "text": "import pandas as pd\ndf = pd.DataFrame({'Sp':['a','b','c','d','e','f'], 'Mt':['s1', 's1', 's2','s2','s2','s3'], 'Value':[1,2,3,4,5,6], 'Count':[3,2,5,10,10,6]})\ndf\n\n\n\n\n  \n    \n      \n      Sp\n      Mt\n      Value\n      Count\n    \n  \n  \n    \n      0\n      a\n      s1\n      1\n      3\n    \n    \n      1\n      b\n      s1\n      2\n      2\n    \n    \n      2\n      c\n      s2\n      3\n      5\n    \n    \n      3\n      d\n      s2\n      4\n      10\n    \n    \n      4\n      e\n      s2\n      5\n      10\n    \n    \n      5\n      f\n      s3\n      6\n      6\n    \n  \n\n\n\n\n\ndf.sort_values('Count', ascending=False).groupby('Mt', as_index=False).first()\n\n\n\n\n  \n    \n      \n      Mt\n      Sp\n      Value\n      Count\n    \n  \n  \n    \n      0\n      s1\n      a\n      1\n      3\n    \n    \n      1\n      s2\n      d\n      4\n      10\n    \n    \n      2\n      s3\n      f\n      6\n      6"
+  },
+  {
+    "href": "rmd\\programming\\python\\frequent-function.html#同一个组进行合并",
+    "title": "常用方法",
+    "section": "同一个组进行合并",
+    "text": "series = df.groupby(by='Mt',as_index=True).apply(lambda p:[','.join(p['Sp'])])\ndf_result = pd.DataFrame({'Mt':series.index, 'Sp': series.values})\ndf_result\n\n\n\n\n  \n    \n      \n      Mt\n      Sp\n    \n  \n  \n    \n      0\n      s1\n      [a,b]\n    \n    \n      1\n      s2\n      [c,d,e]\n    \n    \n      2\n      s3\n      [f]\n    \n  \n\n\n\n\npandarallel\nparatext\nPython 数据分析\n颜色色卡"
+  },
+  {
+    "href": "rmd\\programming\\python\\read-mysql.html#代码样例",
+    "title": "读取 MySQL",
+    "section": "代码样例",
+    "text": "# - *- coding= utf-8 -*-\n\nimport pymysql\nimport pandas as pd\nfrom sqlalchemy import create_engine\n\nmysql_config = {\"host\": \"\", \"database\": \"\", \"user\": \"\", \"password\": \"\", \"port\": 2222}\n\n\n# 获取 mysql 数据\ndef get_mysql_data(host, database, user, password, port, sql_cmd):\n    db_con = pymysql.connect(\n        host=host,\n        database=database,\n        user=user,\n        password=password,\n        port=port,\n        charset='utf8')\n    df_data = pd.read_sql(sql_cmd, db_con)\n    return df_data\n\n\ndef reader_sql():\n    engine = create_engine('mysql+pymysql://{0}:{1}@{2}:{3}/{4}?charset=utf8'.format(mysql_config['user'],\n                                                                                     mysql_config['password'],\n                                                                                     mysql_config['host'],\n                                                                                     mysql_config['port'],\n                                                                                     mysql_config['database']))\n    df = pd.read_sql_query(\"select * from table_name limit 10\", engine)\n    return df\n\n\nif __name__ == '__main__':\n    df_mysql_data = get_mysql_data(host=mysql_config['host'],\n                                   database=mysql_config['database'],\n                                   user=mysql_config['user'],\n                                   password=mysql_config['password'],\n                                   port=mysql_config['port'],\n                                   sql_cmd=\"select * from table_name limit 10\")"
+  },
+  {
+    "href": "rmd\\programming\\python\\read-redis-cluster.html#代码样例",
+    "title": "读取 Redis 集群",
+    "section": "代码样例",
+    "text": "# -*- coding=utf-8 -*-\n\nfrom rediscluster import StrictRedisCluster\nimport TerminalLocationReport_pb2 as TerminalLocationReport\n\n\nif __name__ == '__main__':\n    nodes = [{'host': h1, 'port': p1},\n             {'host': h2, 'port': p2},\n             {'host': h3, 'port': p3}]\n    k = 'a:t'\n    redis_conn = StrictRedisCluster(startup_nodes=nodes, decode_responses=False, skip_full_coverage_check=True)\n    redis_data = redis_conn.get(k)\n    lr = TerminalLocationReport.TerminalLocationReport()\n    lr.ParseFromString(redis_data)"
+  },
+  {
+    "href": "rmd\\programming\\R\\about.html#shiny-部署",
+    "title": "常用方法",
+    "section": "shiny 部署",
+    "text": "访问shiny 官网，注册并登录;\n\n\nemail : ruiqiang@my.swjtu.edu.cn\nusername : jiaoruiqiang\n\n\n加载 rsconnect 包，并应用其中的函数 deployApp 进行发布.\n\nThe R Graph Gallery"
+  },
+  {
+    "href": "rmd\\programming\\software\\latex.html",
+    "title": "LaTex",
+    "section": "",
+    "text": "overleaf"
+  },
+  {
+    "href": "rmd\\programming\\software\\vim.html",
+    "title": "Vim",
+    "section": "",
+    "text": "VIM 中文帮助手册\nLearning Vim"
   },
   {
     "href": "rmd\\programming\\spark\\install.html",
@@ -78,16 +126,22 @@
     "text": "pyspark中的python依赖管理\n目前管理pyspark的python依赖有两种方式：\n1.打包虚拟环境成压缩包,用–py-files或者–archives提交压缩虚拟环境。\n2.pyspark自己生成虚拟环境的方式，仅限于yarn client和yarn cluster模式。\nUsing VirtualEnv with PySpark\n我们是本地模式运行spark所以用第一种方式，管理python依赖的方式也有好几种如canda，Virtualenv，pex都可以，可以参考这篇文章：https://。databricks.com/blog/2020/12/22/how-to-manage-python-dependencies-in-pyspark.html我们尝试用比较熟悉的方式Virtualenv 管理依赖。\nHow to Manage Python Dependencies in PySpark\n我们此次用的是python 3.x来创建虚拟环境，进入虚拟环境，安装需要的python包，打包虚拟环境\npython3.5 -m venv pyspark_venv\nsource pyspark_venv/bin/activate\npip install pyarrow pandas venv-pack\nvenv-pack -o pyspark_venv.tar.gz\n\n\n\n\n\n\nWarning\n\n\n\n我们前面提到打包提交的方式可以用–py-files配置，也可以用–archives来配置；用–archives配置时要加上#environment，用–py-files配置时不需要，同时–py-file还支持xxx.zip文件及多个python files，–archives也支持多个文件。\n\n\n\n\n\n\n\n\nWarning\n\n\n\n目前测试发现仅能在虚拟环境内部才能执行带有python依赖的pyspark程序，退出虚拟环境执行不了。这个问题是因为退出虚拟环境提交pyspark用的是python xxxx.py去执行的，本地python命令指向的是python 2.x，而这个2.x的系统python环境比如没有装pandas就会报错：ImportError: No module named pandas。解决这一问题需要在提交命令中加入配置\n\n\n--conf \"spark.pyspark.python=/usr/bin/python3.5\"\n完整的命令是：\nspark-submit --master local[*] --num-executors 20 --executor-cores 2 --executor-memory 10g --driver-memory 6g --driver-cores 2 --conf \"spark.pyspark.python=/usr/bin/python3.5\" --archives /usr/local/lib/python3.5/pyspark_venv.tar.gz#environment /data/read_hbase.py\nWindows平台下单机Spark环境搭建\njar 包\nLearning Spark"
   },
   {
-    "href": "rmd\\programming\\leetcode\\refrence.html",
-    "title": "Leet code 参考资料",
-    "section": "",
-    "text": "SnailTyan"
+    "href": "rmd\\programming\\spark\\read-hbase.html#安装包",
+    "title": "读取Hbase",
+    "section": "安装包",
+    "text": "python 包\n\npyspark==3.1.1\nprotobuf==3.17.0\npy4j==0.10.9\n\n\n\njar 包\n\nhbase-common-2.0.0.3.0.0.0-1634.jar\nhbase-client-2.0.0.3.0.0.0-1634.jar\nhbase-mapreduce-2.0.0.3.0.0.0-1634.jar\nhbase-shaded-miscellaneous-2.1.0.jar\nhbase-protocol-2.0.0.3.0.0.0-1634.jar\nhbase-protocol-shaded-2.0.0.3.0.0.0-1634.jar\nhbase-shaded-protobuf-2.1.0.jar\nhbase-shaded-netty-2.1.0.jar\nspark-examples_2.11-1.6.0-typesafe-001.jar\n查询 Hbase 得到的 rowKey 类型 ImmutableBytesWritable 和结果做类型转换成 string\n\n上面的 jar 包放置在 spark-script/lib/python3.7/site-packages/pyspark/jars 目录下面"
   },
   {
-    "href": "rmd\\programming\\software\\refrence.html",
-    "title": "Vim",
-    "section": "",
-    "text": "VIM 中文帮助手册"
+    "href": "rmd\\programming\\spark\\read-hbase.html#测试样例",
+    "title": "读取Hbase",
+    "section": "测试样例",
+    "text": "from pyspark.sql import SparkSession\nfrom pyspark import SparkConf\nimport TerminalLocationReport_pb2 as TerminalLocationReportProto\nimport json\nimport sys, os\nimport codecs\n\ndef get_rdd_element(rdd):\n    row_values = json.loads(rdd[1])['value']\n    a = codecs.escape_decode(row_values.encode())[0]                \n    report = TerminalLocationReportProto.TerminalLocationReport()\n    report.ParseFromString(a)\n    return report\n\ndef get_hbase_terminal_info():\n    \"\"\"\n    hbase_conf 中的参数配置\n    zookeeper集群地址 \n    hbase master的元数据信息都存在zookeeper中，读取zookeeper就能锁定你要读的数据在hdfs的哪个位置；\n    指定到zookeeper的hbase原数据目录下去读；读取的表名\n    \n    \"\"\"\n    hbase_conf = {\n                 'hbase.zookeeper.quorum':'b-bd-cd1-01.local.lan,b-bd-cd1-02.local.lan,b-bd-cd1-03.local.lan',                                      \n                 'zookeeper.znode.parent': '/hbase-unsecure',\n                 'hbase.mapreduce.inputtable': ''\n    }\n    \n    \"\"\"\n    newAPIHadoopRDD用sparkContext读取hbase表，依次配置：指定读取表用TableInputFormat类；\n    rowkey的返回类型: 数据返回类型；rowkey返回类型强制转换为string；数据返回类型强制转换为string\n    \"\"\"\n\n    data_rdd = sc.newAPIHadoopRDD('org.apache.hadoop.hbase.mapreduce.TableInputFormat',\n                                   'org.apache.hadoop.hbase.io.ImmutableBytesWritable',\n                                   'org.apache.hadoop.hbase.client.Result',\n                                   'org.apache.spark.examples.pythonconverters.ImmutableBytesWritableToStringConverter',\n                                   'org.apache.spark.examples.pythonconverters.HBaseResultToStringConverter',\n                              conf=hbase_conf)\\\n                  .map(get_rdd_element)\n    return data_rdd\n    \n    \nif __name__ == \"__main__\":\n   # add config\n   conf = SparkConf()                                # 初始化 \n   conf.setAppName('read-hbase')                     # 设置程序名称\n   # 设置 spark 采取 Kryo 序列化\n   conf.set('spark.serializer', 'org.apache.spark.serializer.KryoSerializer')\n   conf.set('spark.kryoserializer.buffer.max', '512m')\n   # spark_session 用于读取多种数据源(mysql、hdfs、Hive)\n   spark_session = SparkSession.builder.config(conf=conf).getOrCreate()\n   # spark_session 中的 sparkContext 对象可读取 hbase、hdfs\n   sc = spark_session.sparkContext\n   rdd_data = get_hbase_terminal_info()\n   print(rdd_data.take(1))"
+  },
+  {
+    "href": "rmd\\programming\\spark\\read-mysql.html#测试样例",
+    "title": "读取 MySQL",
+    "section": "测试样例",
+    "text": "# - *- coding= utf-8 -*-\n\nfrom pyspark.sql import SparkSession, SQLContext\nfrom pyspark import SparkConf, SparkContext\n\n\ndef get_mysql():\n    prop = {'user': '', 'password': '', 'driver': 'com.mysql.jdbc.Driver'}\n    url = 'jdbc:mysql://{0}:{1}/{2}'.format(\"host\", \"port\", \"database\")\n    df_terminal_detail = spark_session.read.jdbc(url=url, table='', properties=prop)\n    \n    # df_termianl_detail = spark_session.read.format(\"jdbc\")\\\n    #                                      .option(\"url\", \"jdbc:postgresql:postgres\")\\\n    #                                       .option(\"dbtable\", \"\")\\\n    #                                       .option(\"user\", \"\")\\\n    #                                       .option(\"password\", \"\")\\\n    #                                       .load()\n    return df_terminal_detail\n\n\nif __name__ == '__main__':\n    conf = SparkConf()\n    conf.setAppName('user_behavior')\n    conf.set('spark.serializer', 'org.apache.spark.serializer.KryoSerializer')\n    conf.set('spark.kryoserializer.buffer.max', '512m')\n    spark_session = SparkSession.builder.config(conf=conf).getOrCreate()\n    sc = spark_session.sparkContext\n    df_mysql = get_mysql()"
   },
   {
     "href": "rmd\\programming\\spark\\submit-run-task.html#local模式",
@@ -118,35 +172,5 @@
     "title": "服务器提交运行任务",
     "section": "mesos模式",
     "text": "该模式是spark官方推荐的运行模式。但目前公司未使用，mosos也是一个集群资源管理器，mesos提供粗粒度和细粒度的资源管理模式，但是目前由于细粒度的管理模式相对繁琐，已弃用，保留的粗粒度管理模式和yarn的资源管理很类似，公司选择了yarn来管理，所以这里我们就不细说了，可以自行去查资料了解。\n目前从上面4种运行模式来看，pyspark的运行速度都赶不上spark，因为涉及python进程和jvm进程数据交互，所以建议从pyspark熟悉后采用spark来执行，因为api几乎都是一样的。"
-  },
-  {
-    "href": "rmd\\programming\\spark\\read-hbase.html#安装包",
-    "title": "读取Hbase",
-    "section": "安装包",
-    "text": "python 包\n\npyspark==3.1.1\nprotobuf==3.17.0\npy4j==0.10.9\n\n\n\njar 包\n\nhbase-common-2.0.0.3.0.0.0-1634.jar\nhbase-client-2.0.0.3.0.0.0-1634.jar\nhbase-mapreduce-2.0.0.3.0.0.0-1634.jar\nhbase-shaded-miscellaneous-2.1.0.jar\nhbase-protocol-2.0.0.3.0.0.0-1634.jar\nhbase-protocol-shaded-2.0.0.3.0.0.0-1634.jar\nhbase-shaded-protobuf-2.1.0.jar\nhbase-shaded-netty-2.1.0.jar\nspark-examples_2.11-1.6.0-typesafe-001.jar\n查询 Hbase 得到的 rowKey 类型 ImmutableBytesWritable 和结果做类型转换成 string\n\n上面的 jar 包放置在 spark-script/lib/python3.7/site-packages/pyspark/jars 目录下面"
-  },
-  {
-    "href": "rmd\\programming\\spark\\read-hbase.html#测试样例",
-    "title": "读取Hbase",
-    "section": "测试样例",
-    "text": "from pyspark.sql import SparkSession\nfrom pyspark import SparkConf\nimport TerminalLocationReport_pb2 as TerminalLocationReportProto\nimport json\nimport sys, os\nimport codecs\n\ndef get_rdd_element(rdd):\n    row_values = json.loads(rdd[1])['value']\n    a = codecs.escape_decode(row_values.encode())[0]                \n    report = TerminalLocationReportProto.TerminalLocationReport()\n    report.ParseFromString(a)\n    return report\n\ndef get_hbase_terminal_info():\n    \"\"\"\n    hbase_conf 中的参数配置\n    zookeeper集群地址 \n    hbase master的元数据信息都存在zookeeper中，读取zookeeper就能锁定你要读的数据在hdfs的哪个位置；\n    指定到zookeeper的hbase原数据目录下去读；读取的表名\n    \n    \"\"\"\n    hbase_conf = {\n                 'hbase.zookeeper.quorum':'b-bd-cd1-01.local.lan,b-bd-cd1-02.local.lan,b-bd-cd1-03.local.lan',                                      \n                 'zookeeper.znode.parent': '/hbase-unsecure',\n                 'hbase.mapreduce.inputtable': ''\n    }\n    \n    \"\"\"\n    newAPIHadoopRDD用sparkContext读取hbase表，依次配置：指定读取表用TableInputFormat类；\n    rowkey的返回类型: 数据返回类型；rowkey返回类型强制转换为string；数据返回类型强制转换为string\n    \"\"\"\n\n    data_rdd = sc.newAPIHadoopRDD('org.apache.hadoop.hbase.mapreduce.TableInputFormat',\n                                   'org.apache.hadoop.hbase.io.ImmutableBytesWritable',\n                                   'org.apache.hadoop.hbase.client.Result',\n                                   'org.apache.spark.examples.pythonconverters.ImmutableBytesWritableToStringConverter',\n                                   'org.apache.spark.examples.pythonconverters.HBaseResultToStringConverter',\n                              conf=hbase_conf)\\\n                  .map(get_rdd_element)\n    return data_rdd\n    \n    \nif __name__ == \"__main__\":\n   # add config\n   conf = SparkConf()                                # 初始化 \n   conf.setAppName('read-hbase')                     # 设置程序名称\n   # 设置 spark 采取 Kryo 序列化\n   conf.set('spark.serializer', 'org.apache.spark.serializer.KryoSerializer')\n   conf.set('spark.kryoserializer.buffer.max', '512m')\n   # spark_session 用于读取多种数据源(mysql、hdfs、Hive)\n   spark_session = SparkSession.builder.config(conf=conf).getOrCreate()\n   # spark_session 中的 sparkContext 对象可读取 hbase、hdfs\n   sc = spark_session.sparkContext\n   rdd_data = get_hbase_terminal_info()\n   print(rdd_data.take(1))"
-  },
-  {
-    "href": "rmd\\programming\\python\\read-redis-cluster.html#代码样例",
-    "title": "读取 Redis 集群",
-    "section": "代码样例",
-    "text": "# -*- coding=utf-8 -*-\n\nfrom rediscluster import StrictRedisCluster\nimport TerminalLocationReport_pb2 as TerminalLocationReport\n\n\nif __name__ == '__main__':\n    nodes = [{'host': h1, 'port': p1},\n             {'host': h2, 'port': p2},\n             {'host': h3, 'port': p3}]\n    k = 'a:t'\n    redis_conn = StrictRedisCluster(startup_nodes=nodes, decode_responses=False, skip_full_coverage_check=True)\n    redis_data = redis_conn.get(k)\n    lr = TerminalLocationReport.TerminalLocationReport()\n    lr.ParseFromString(redis_data)"
-  },
-  {
-    "href": "rmd\\programming\\python\\read-mysql.html#代码样例",
-    "title": "读取 MySQL",
-    "section": "代码样例",
-    "text": "# - *- coding= utf-8 -*-\n\nimport pymysql\nimport pandas as pd\nfrom sqlalchemy import create_engine\n\nmysql_config = {\"host\": \"\", \"database\": \"\", \"user\": \"\", \"password\": \"\", \"port\": 2222}\n\n\n# 获取 mysql 数据\ndef get_mysql_data(host, database, user, password, port, sql_cmd):\n    db_con = pymysql.connect(\n        host=host,\n        database=database,\n        user=user,\n        password=password,\n        port=port,\n        charset='utf8')\n    df_data = pd.read_sql(sql_cmd, db_con)\n    return df_data\n\n\ndef reader_sql():\n    engine = create_engine('mysql+pymysql://{0}:{1}@{2}:{3}/{4}?charset=utf8'.format(mysql_config['user'],\n                                                                                     mysql_config['password'],\n                                                                                     mysql_config['host'],\n                                                                                     mysql_config['port'],\n                                                                                     mysql_config['database']))\n    df = pd.read_sql_query(\"select * from table_name limit 10\", engine)\n    return df\n\n\nif __name__ == '__main__':\n    df_mysql_data = get_mysql_data(host=mysql_config['host'],\n                                   database=mysql_config['database'],\n                                   user=mysql_config['user'],\n                                   password=mysql_config['password'],\n                                   port=mysql_config['port'],\n                                   sql_cmd=\"select * from table_name limit 10\")"
-  },
-  {
-    "href": "rmd\\programming\\spark\\read-mysql.html#测试样例",
-    "title": "读取 MySQL",
-    "section": "测试样例",
-    "text": "# - *- coding= utf-8 -*-\n\nfrom pyspark.sql import SparkSession, SQLContext\nfrom pyspark import SparkConf, SparkContext\n\n\ndef get_mysql():\n    prop = {'user': '', 'password': '', 'driver': 'com.mysql.jdbc.Driver'}\n    url = 'jdbc:mysql://{0}:{1}/{2}'.format(\"host\", \"port\", \"database\")\n    df_terminal_detail = spark_session.read.jdbc(url=url, table='', properties=prop)\n    \n    # df_termianl_detail = spark_session.read.format(\"jdbc\")\\\n    #                                      .option(\"url\", \"jdbc:postgresql:postgres\")\\\n    #                                       .option(\"dbtable\", \"\")\\\n    #                                       .option(\"user\", \"\")\\\n    #                                       .option(\"password\", \"\")\\\n    #                                       .load()\n    return df_terminal_detail\n\n\nif __name__ == '__main__':\n    conf = SparkConf()\n    conf.setAppName('user_behavior')\n    conf.set('spark.serializer', 'org.apache.spark.serializer.KryoSerializer')\n    conf.set('spark.kryoserializer.buffer.max', '512m')\n    spark_session = SparkSession.builder.config(conf=conf).getOrCreate()\n    sc = spark_session.sparkContext\n    df_mysql = get_mysql()"
   }
 ]

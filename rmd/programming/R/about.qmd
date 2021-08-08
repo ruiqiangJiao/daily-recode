@@ -1,4 +1,16 @@
 ---
-title: "关于"
+title: "常用方法"
 jupyter: python3
 ---
+
+## shiny 部署
+
+1. 访问shiny 官网，注册并登录;
+
+  - email : ruiqiang@my.swjtu.edu.cn
+
+  - username : jiaoruiqiang
+  
+2. 加载 rsconnect 包，并应用其中的函数 deployApp 进行发布.
+
+[The R Graph Gallery](https://www.r-graph-gallery.com/)

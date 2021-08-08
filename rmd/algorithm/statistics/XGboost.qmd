@@ -1,0 +1,6 @@
+---
+title: "XGboost"
+jupyter: python3
+---
+
+[XGboost](https://xgboost.readthedocs.io/en/latest/python/python_api.html)

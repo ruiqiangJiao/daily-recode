@@ -5,3 +5,7 @@ jupyter: python3
 
 
 [《动手学深度学习》](http://tangshusen.me/Dive-into-DL-PyTorch/#/): 《Dive into Deep Learning》原书中的MXNet实现改为PyTorch实现
+
+[参考资料](https://github.com/foochane?tab=repositories)
+
+[CSBook](https://github.com/Jonezhen/CSBook)

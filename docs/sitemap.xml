@@ -2,82 +2,94 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https:/ruiqiangjiao.github.io/daily-recode/about.html</loc>
-    <lastmod>2021-08-06T09:39:10.539Z</lastmod>
+    <lastmod>2021-08-08T03:26:33.964Z</lastmod>
   </url>
   <url>
     <loc>https:/ruiqiangjiao.github.io/daily-recode/index.html</loc>
-    <lastmod>2021-08-06T09:38:40.918Z</lastmod>
+    <lastmod>2021-08-08T03:26:38.387Z</lastmod>
   </url>
   <url>
     <loc>https:/ruiqiangjiao.github.io/daily-recode/refrence.html</loc>
-    <lastmod>2021-08-06T09:38:53.127Z</lastmod>
-  </url>
-  <url>
-    <loc>https:/ruiqiangjiao.github.io/daily-recode/rmd/algorithm/reinforcement_learning/about.html</loc>
-    <lastmod>2021-08-05T06:18:34.885Z</lastmod>
-  </url>
-  <url>
-    <loc>https:/ruiqiangjiao.github.io/daily-recode/rmd/algorithm/statistics/about.html</loc>
-    <lastmod>2021-08-04T02:03:33.584Z</lastmod>
-  </url>
-  <url>
-    <loc>https:/ruiqiangjiao.github.io/daily-recode/rmd/programming/python/about.html</loc>
-    <lastmod>2021-08-06T03:23:37.317Z</lastmod>
-  </url>
-  <url>
-    <loc>https:/ruiqiangjiao.github.io/daily-recode/rmd/programming/R/about.html</loc>
-    <lastmod>2021-08-05T06:18:46.694Z</lastmod>
-  </url>
-  <url>
-    <loc>https:/ruiqiangjiao.github.io/daily-recode/rmd/algorithm/statistics/isolation_forest.html</loc>
-    <lastmod>2021-08-05T06:23:28.167Z</lastmod>
-  </url>
-  <url>
-    <loc>https:/ruiqiangjiao.github.io/daily-recode/rmd/algorithm/statistics/elements_of_statistical_learning.html</loc>
-    <lastmod>2021-08-05T07:11:09.506Z</lastmod>
-  </url>
-  <url>
-    <loc>https:/ruiqiangjiao.github.io/daily-recode/rmd/algorithm/statistics/lof.html</loc>
-    <lastmod>2021-08-05T06:18:40.889Z</lastmod>
-  </url>
-  <url>
-    <loc>https:/ruiqiangjiao.github.io/daily-recode/rmd/programming/git/refrence.html</loc>
-    <lastmod>2021-08-05T06:18:42.742Z</lastmod>
+    <lastmod>2021-08-08T03:26:43.062Z</lastmod>
   </url>
   <url>
     <loc>https:/ruiqiangjiao.github.io/daily-recode/rmd/algorithm/deep_learning/dive_into_deep_learning.html</loc>
-    <lastmod>2021-08-05T06:23:06.125Z</lastmod>
+    <lastmod>2021-08-08T03:26:48.276Z</lastmod>
   </url>
   <url>
-    <loc>https:/ruiqiangjiao.github.io/daily-recode/rmd/programming/spark/install.html</loc>
-    <lastmod>2021-08-06T09:33:40.896Z</lastmod>
+    <loc>https:/ruiqiangjiao.github.io/daily-recode/rmd/algorithm/other/geohash.html</loc>
+    <lastmod>2021-08-08T03:26:52.708Z</lastmod>
+  </url>
+  <url>
+    <loc>https:/ruiqiangjiao.github.io/daily-recode/rmd/algorithm/other/slam.html</loc>
+    <lastmod>2021-08-08T03:26:57.279Z</lastmod>
+  </url>
+  <url>
+    <loc>https:/ruiqiangjiao.github.io/daily-recode/rmd/algorithm/reinforcement_learning/about.html</loc>
+    <lastmod>2021-08-08T03:27:02.181Z</lastmod>
+  </url>
+  <url>
+    <loc>https:/ruiqiangjiao.github.io/daily-recode/rmd/algorithm/statistics/elements_of_statistical_learning.html</loc>
+    <lastmod>2021-08-08T03:27:06.832Z</lastmod>
+  </url>
+  <url>
+    <loc>https:/ruiqiangjiao.github.io/daily-recode/rmd/algorithm/statistics/isolation_forest.html</loc>
+    <lastmod>2021-08-08T03:27:11.446Z</lastmod>
+  </url>
+  <url>
+    <loc>https:/ruiqiangjiao.github.io/daily-recode/rmd/algorithm/statistics/lof.html</loc>
+    <lastmod>2021-08-08T03:27:16.605Z</lastmod>
+  </url>
+  <url>
+    <loc>https:/ruiqiangjiao.github.io/daily-recode/rmd/algorithm/statistics/XGboost.html</loc>
+    <lastmod>2021-08-08T03:27:21.071Z</lastmod>
+  </url>
+  <url>
+    <loc>https:/ruiqiangjiao.github.io/daily-recode/rmd/programming/git/refrence.html</loc>
+    <lastmod>2021-08-08T03:27:25.686Z</lastmod>
   </url>
   <url>
     <loc>https:/ruiqiangjiao.github.io/daily-recode/rmd/programming/leetcode/refrence.html</loc>
-    <lastmod>2021-08-06T03:23:18.864Z</lastmod>
+    <lastmod>2021-08-08T03:27:30.596Z</lastmod>
   </url>
   <url>
-    <loc>https:/ruiqiangjiao.github.io/daily-recode/rmd/programming/software/refrence.html</loc>
-    <lastmod>2021-08-06T03:22:55.548Z</lastmod>
-  </url>
-  <url>
-    <loc>https:/ruiqiangjiao.github.io/daily-recode/rmd/programming/spark/submit-run-task.html</loc>
-    <lastmod>2021-08-06T09:35:27.255Z</lastmod>
-  </url>
-  <url>
-    <loc>https:/ruiqiangjiao.github.io/daily-recode/rmd/programming/spark/read-hbase.html</loc>
-    <lastmod>2021-08-06T09:35:14.196Z</lastmod>
-  </url>
-  <url>
-    <loc>https:/ruiqiangjiao.github.io/daily-recode/rmd/programming/python/read-redis-cluster.html</loc>
-    <lastmod>2021-08-06T09:34:02.273Z</lastmod>
+    <loc>https:/ruiqiangjiao.github.io/daily-recode/rmd/programming/python/frequent-function.html</loc>
+    <lastmod>2021-08-08T03:27:35.205Z</lastmod>
   </url>
   <url>
     <loc>https:/ruiqiangjiao.github.io/daily-recode/rmd/programming/python/read-mysql.html</loc>
-    <lastmod>2021-08-06T09:33:53.871Z</lastmod>
+    <lastmod>2021-08-08T03:27:39.699Z</lastmod>
+  </url>
+  <url>
+    <loc>https:/ruiqiangjiao.github.io/daily-recode/rmd/programming/python/read-redis-cluster.html</loc>
+    <lastmod>2021-08-08T03:27:44.367Z</lastmod>
+  </url>
+  <url>
+    <loc>https:/ruiqiangjiao.github.io/daily-recode/rmd/programming/R/about.html</loc>
+    <lastmod>2021-08-08T03:27:48.943Z</lastmod>
+  </url>
+  <url>
+    <loc>https:/ruiqiangjiao.github.io/daily-recode/rmd/programming/software/latex.html</loc>
+    <lastmod>2021-08-08T03:27:53.283Z</lastmod>
+  </url>
+  <url>
+    <loc>https:/ruiqiangjiao.github.io/daily-recode/rmd/programming/software/vim.html</loc>
+    <lastmod>2021-08-08T03:27:57.709Z</lastmod>
+  </url>
+  <url>
+    <loc>https:/ruiqiangjiao.github.io/daily-recode/rmd/programming/spark/install.html</loc>
+    <lastmod>2021-08-08T03:28:02.356Z</lastmod>
+  </url>
+  <url>
+    <loc>https:/ruiqiangjiao.github.io/daily-recode/rmd/programming/spark/read-hbase.html</loc>
+    <lastmod>2021-08-08T03:28:06.800Z</lastmod>
   </url>
   <url>
     <loc>https:/ruiqiangjiao.github.io/daily-recode/rmd/programming/spark/read-mysql.html</loc>
-    <lastmod>2021-08-06T09:35:01.032Z</lastmod>
+    <lastmod>2021-08-08T03:28:10.967Z</lastmod>
+  </url>
+  <url>
+    <loc>https:/ruiqiangjiao.github.io/daily-recode/rmd/programming/spark/submit-run-task.html</loc>
+    <lastmod>2021-08-08T03:28:15.520Z</lastmod>
   </url>
 </urlset>
