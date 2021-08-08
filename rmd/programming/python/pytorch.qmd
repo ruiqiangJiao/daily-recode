@@ -1,0 +1,9 @@
+---
+title: "pytorch 参考"
+jupyter: python3
+---
+
+[pytorch handbook](https://github.com/zergtant/pytorch-handbook)
+
+
+[Pytorch Tutorial](https://github.com/yunjey/pytorch-tutorial)

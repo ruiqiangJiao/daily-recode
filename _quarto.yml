@@ -2,7 +2,7 @@ project:
   type: site
   output-dir: docs
 site:
-  title: ""
+  title: "日常记录"
   site-url: https://ruiqiangjiao.github.io/daily-recode/
   repo-url: https://github.com/ruiqiangJiao/daily-recode/
   repo-actions: [edit]
@@ -33,6 +33,7 @@ site:
             - rmd/programming/python/read-redis-cluster.qmd
             - rmd/programming/python/read-mysql.qmd
             - rmd/programming/python/frequent-function.qmd
+            - rmd/programming/python/pytorch.qmd
         - section: "R"
           contents:
             - rmd/programming/R/about.qmd

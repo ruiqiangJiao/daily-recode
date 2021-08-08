@@ -5,3 +5,6 @@ jupyter: python3
 
 
 [The Elements of Statistical Learning](https://esl.hohoweiya.xyz/)
+
+
+[Computer Age Statistical Inference](https://web.stanford.edu/~hastie/CASI_files/PDF/casi.pdf)

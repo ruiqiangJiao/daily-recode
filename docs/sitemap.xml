@@ -2,94 +2,98 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https:/ruiqiangjiao.github.io/daily-recode/about.html</loc>
-    <lastmod>2021-08-08T03:26:33.964Z</lastmod>
+    <lastmod>2021-08-08T03:42:02.696Z</lastmod>
   </url>
   <url>
     <loc>https:/ruiqiangjiao.github.io/daily-recode/index.html</loc>
-    <lastmod>2021-08-08T03:26:38.387Z</lastmod>
+    <lastmod>2021-08-08T03:42:07.137Z</lastmod>
   </url>
   <url>
     <loc>https:/ruiqiangjiao.github.io/daily-recode/refrence.html</loc>
-    <lastmod>2021-08-08T03:26:43.062Z</lastmod>
+    <lastmod>2021-08-08T03:42:11.701Z</lastmod>
   </url>
   <url>
     <loc>https:/ruiqiangjiao.github.io/daily-recode/rmd/algorithm/deep_learning/dive_into_deep_learning.html</loc>
-    <lastmod>2021-08-08T03:26:48.276Z</lastmod>
+    <lastmod>2021-08-08T03:42:16.711Z</lastmod>
   </url>
   <url>
     <loc>https:/ruiqiangjiao.github.io/daily-recode/rmd/algorithm/other/geohash.html</loc>
-    <lastmod>2021-08-08T03:26:52.708Z</lastmod>
+    <lastmod>2021-08-08T03:42:21.292Z</lastmod>
   </url>
   <url>
     <loc>https:/ruiqiangjiao.github.io/daily-recode/rmd/algorithm/other/slam.html</loc>
-    <lastmod>2021-08-08T03:26:57.279Z</lastmod>
+    <lastmod>2021-08-08T03:42:25.947Z</lastmod>
   </url>
   <url>
     <loc>https:/ruiqiangjiao.github.io/daily-recode/rmd/algorithm/reinforcement_learning/about.html</loc>
-    <lastmod>2021-08-08T03:27:02.181Z</lastmod>
+    <lastmod>2021-08-08T03:42:30.180Z</lastmod>
   </url>
   <url>
     <loc>https:/ruiqiangjiao.github.io/daily-recode/rmd/algorithm/statistics/elements_of_statistical_learning.html</loc>
-    <lastmod>2021-08-08T03:27:06.832Z</lastmod>
+    <lastmod>2021-08-08T03:42:34.615Z</lastmod>
   </url>
   <url>
     <loc>https:/ruiqiangjiao.github.io/daily-recode/rmd/algorithm/statistics/isolation_forest.html</loc>
-    <lastmod>2021-08-08T03:27:11.446Z</lastmod>
+    <lastmod>2021-08-08T03:42:39.401Z</lastmod>
   </url>
   <url>
     <loc>https:/ruiqiangjiao.github.io/daily-recode/rmd/algorithm/statistics/lof.html</loc>
-    <lastmod>2021-08-08T03:27:16.605Z</lastmod>
+    <lastmod>2021-08-08T03:42:43.883Z</lastmod>
   </url>
   <url>
     <loc>https:/ruiqiangjiao.github.io/daily-recode/rmd/algorithm/statistics/XGboost.html</loc>
-    <lastmod>2021-08-08T03:27:21.071Z</lastmod>
+    <lastmod>2021-08-08T03:42:48.882Z</lastmod>
   </url>
   <url>
     <loc>https:/ruiqiangjiao.github.io/daily-recode/rmd/programming/git/refrence.html</loc>
-    <lastmod>2021-08-08T03:27:25.686Z</lastmod>
+    <lastmod>2021-08-08T03:42:53.446Z</lastmod>
   </url>
   <url>
     <loc>https:/ruiqiangjiao.github.io/daily-recode/rmd/programming/leetcode/refrence.html</loc>
-    <lastmod>2021-08-08T03:27:30.596Z</lastmod>
+    <lastmod>2021-08-08T03:42:57.975Z</lastmod>
   </url>
   <url>
     <loc>https:/ruiqiangjiao.github.io/daily-recode/rmd/programming/python/frequent-function.html</loc>
-    <lastmod>2021-08-08T03:27:35.205Z</lastmod>
+    <lastmod>2021-08-08T03:43:02.325Z</lastmod>
+  </url>
+  <url>
+    <loc>https:/ruiqiangjiao.github.io/daily-recode/rmd/programming/python/pytorch.html</loc>
+    <lastmod>2021-08-08T03:43:07.170Z</lastmod>
   </url>
   <url>
     <loc>https:/ruiqiangjiao.github.io/daily-recode/rmd/programming/python/read-mysql.html</loc>
-    <lastmod>2021-08-08T03:27:39.699Z</lastmod>
+    <lastmod>2021-08-08T03:43:11.830Z</lastmod>
   </url>
   <url>
     <loc>https:/ruiqiangjiao.github.io/daily-recode/rmd/programming/python/read-redis-cluster.html</loc>
-    <lastmod>2021-08-08T03:27:44.367Z</lastmod>
+    <lastmod>2021-08-08T03:43:16.387Z</lastmod>
   </url>
   <url>
     <loc>https:/ruiqiangjiao.github.io/daily-recode/rmd/programming/R/about.html</loc>
-    <lastmod>2021-08-08T03:27:48.943Z</lastmod>
+    <lastmod>2021-08-08T03:43:21.227Z</lastmod>
   </url>
   <url>
     <loc>https:/ruiqiangjiao.github.io/daily-recode/rmd/programming/software/latex.html</loc>
-    <lastmod>2021-08-08T03:27:53.283Z</lastmod>
+    <lastmod>2021-08-08T03:43:25.544Z</lastmod>
   </url>
   <url>
     <loc>https:/ruiqiangjiao.github.io/daily-recode/rmd/programming/software/vim.html</loc>
-    <lastmod>2021-08-08T03:27:57.709Z</lastmod>
+    <lastmod>2021-08-08T03:43:29.867Z</lastmod>
   </url>
   <url>
     <loc>https:/ruiqiangjiao.github.io/daily-recode/rmd/programming/spark/install.html</loc>
-    <lastmod>2021-08-08T03:28:02.356Z</lastmod>
+    <lastmod>2021-08-08T03:43:34.074Z</lastmod>
   </url>
   <url>
     <loc>https:/ruiqiangjiao.github.io/daily-recode/rmd/programming/spark/read-hbase.html</loc>
-    <lastmod>2021-08-08T03:28:06.800Z</lastmod>
+    <lastmod>2021-08-08T03:43:39.080Z</lastmod>
   </url>
   <url>
     <loc>https:/ruiqiangjiao.github.io/daily-recode/rmd/programming/spark/read-mysql.html</loc>
-    <lastmod>2021-08-08T03:28:10.967Z</lastmod>
+    <lastmod>2021-08-08T03:43:43.502Z</lastmod>
   </url>
   <url>
     <loc>https:/ruiqiangjiao.github.io/daily-recode/rmd/programming/spark/submit-run-task.html</loc>
-    <lastmod>2021-08-08T03:28:15.520Z</lastmod>
+    <lastmod>2021-08-08T03:43:48.209Z</lastmod>
   </url>
 </urlset>

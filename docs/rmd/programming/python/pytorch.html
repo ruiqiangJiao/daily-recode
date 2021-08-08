@@ -3,7 +3,7 @@
   <meta charset="utf-8">
   <meta name="generator" content="quarto-(Local Development)">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-  <title>日常记录 – 动手学深度学习</title>
+  <title>日常记录 – pytorch 参考</title>
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
@@ -22,7 +22,8 @@
   <script src="../../../site_libs/quarto-search/autocomplete.min.js"></script>
   <script src="../../../site_libs/quarto-search/fuse.min.js"></script>
   <script src="../../../site_libs/quarto-search/quarto-search.js"></script>
-  <link href="../../../rmd/algorithm/reinforcement_learning/about.html" rel="prev">
+  <link href="../../../rmd/programming/R/about.html" rel="next">
+  <link href="../../../rmd/programming/python/frequent-function.html" rel="prev">
   <script src="../../../site_libs/quarto-html/quarto.js"></script>
   <script src="../../../site_libs/quarto-html/popper.min.js"></script>
   <script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -62,11 +63,11 @@
  参考</a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../../rmd/programming/python/read-redis-cluster.html">
+    <a class="nav-link active" href="../../../rmd/programming/python/read-redis-cluster.html" aria-current="page">
  编程</a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../../../rmd/algorithm/statistics/elements_of_statistical_learning.html" aria-current="page">
+    <a class="nav-link" href="../../../rmd/algorithm/statistics/elements_of_statistical_learning.html">
  算法</a>
   </li>  
 </ul>
@@ -78,7 +79,7 @@
 </nav>
 <nav class="quarto-secondary-nav py-2 d-lg-none d-md-block " data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <div class="container-fluid d-flex justify-content-between">
-    <h1 class="quarto-secondary-nav-title mb-0 fs-3 d-inline">动手学深度学习</h1>
+    <h1 class="quarto-secondary-nav-title mb-0 fs-3 d-inline">pytorch 参考</h1>
     <button type="button" class="quarto-btn-toggle btn d-lg-none py-0 px-1 d-inline-block border-0 ">
       <i class="bi bi-chevron-right"></i>
     </button>
@@ -95,24 +96,24 @@
       <ul class="list-unstyled sidebar-section depth1">
     <li class="">
         <div class="me-auto ">
-            <a class="sidebar-section-item d-inline-flex text-start w-100 " data-bs-toggle="collapse" data-bs-target="#统计学-collapse" aria-expanded="true">
-              <div class="me-auto  sidebar-section-item">统计学</div>
+            <a class="sidebar-section-item d-inline-flex text-start w-100 " data-bs-toggle="collapse" data-bs-target="#python-collapse" aria-expanded="true">
+              <div class="me-auto  sidebar-section-item">python</div>
             <div><i class="bi bi-chevron-right ms-2 "></i></div>
             </a>
         </div>
-      <div class="collapse  show" id="统计学-collapse">
+      <div class="collapse  show" id="python-collapse">
         <ul class="list-unstyled sidebar-item-contents">
           <li class="sidebar-item">
-  <a href="../../../rmd/algorithm/statistics/elements_of_statistical_learning.html" class="">The Elements of Statistical Learning</a>
+  <a href="../../../rmd/programming/python/read-redis-cluster.html" class="">读取 Redis 集群</a>
 </li>
           <li class="sidebar-item">
-  <a href="../../../rmd/algorithm/statistics/isolation_forest.html" class="">孤立森林</a>
+  <a href="../../../rmd/programming/python/read-mysql.html" class="">读取 MySQL</a>
 </li>
           <li class="sidebar-item">
-  <a href="../../../rmd/algorithm/statistics/lof.html" class="">局部离群因子</a>
+  <a href="../../../rmd/programming/python/frequent-function.html" class="">常用方法</a>
 </li>
           <li class="sidebar-item">
-  <a href="../../../rmd/algorithm/statistics/XGboost.html" class="">XGboost</a>
+  <a href="../../../rmd/programming/python/pytorch.html" class="active" data-resolve-title="true">pytorch 参考</a>
 </li>
         </ul>
       </div>
@@ -121,15 +122,15 @@
       <ul class="list-unstyled sidebar-section depth1">
     <li class="">
         <div class="me-auto ">
-            <a class="sidebar-section-item d-inline-flex text-start w-100 " data-bs-toggle="collapse" data-bs-target="#强化学习-collapse" aria-expanded="true">
-              <div class="me-auto  sidebar-section-item">强化学习</div>
+            <a class="sidebar-section-item d-inline-flex text-start w-100 " data-bs-toggle="collapse" data-bs-target="#r-collapse" aria-expanded="true">
+              <div class="me-auto  sidebar-section-item">R</div>
             <div><i class="bi bi-chevron-right ms-2 "></i></div>
             </a>
         </div>
-      <div class="collapse  show" id="强化学习-collapse">
+      <div class="collapse  show" id="r-collapse">
         <ul class="list-unstyled sidebar-item-contents">
           <li class="sidebar-item">
-  <a href="../../../rmd/algorithm/reinforcement_learning/about.html" class="">关于</a>
+  <a href="../../../rmd/programming/R/about.html" class="">常用方法</a>
 </li>
         </ul>
       </div>
@@ -138,15 +139,15 @@
       <ul class="list-unstyled sidebar-section depth1">
     <li class="">
         <div class="me-auto ">
-            <a class="sidebar-section-item d-inline-flex text-start w-100 " data-bs-toggle="collapse" data-bs-target="#深度学习-collapse" aria-expanded="true">
-              <div class="me-auto  sidebar-section-item">深度学习</div>
+            <a class="sidebar-section-item d-inline-flex text-start w-100 " data-bs-toggle="collapse" data-bs-target="#git-collapse" aria-expanded="true">
+              <div class="me-auto  sidebar-section-item">git</div>
             <div><i class="bi bi-chevron-right ms-2 "></i></div>
             </a>
         </div>
-      <div class="collapse  show" id="深度学习-collapse">
+      <div class="collapse  show" id="git-collapse">
         <ul class="list-unstyled sidebar-item-contents">
           <li class="sidebar-item">
-  <a href="../../../rmd/algorithm/deep_learning/dive_into_deep_learning.html" class="active">动手学深度学习</a>
+  <a href="../../../rmd/programming/git/refrence.html" class="">精通Git(第二版简体中文)</a>
 </li>
         </ul>
       </div>
@@ -155,13 +156,62 @@
       <ul class="list-unstyled sidebar-section depth1">
     <li class="">
         <div class="me-auto ">
-            <a class="sidebar-section-item d-inline-flex text-start w-100 " data-bs-toggle="collapse" data-bs-target="#其它-collapse" aria-expanded="true">
-              <div class="me-auto  sidebar-section-item">其它</div>
+            <a class="sidebar-section-item d-inline-flex text-start w-100 " data-bs-toggle="collapse" data-bs-target="#spark-collapse" aria-expanded="true">
+              <div class="me-auto  sidebar-section-item">spark</div>
             <div><i class="bi bi-chevron-right ms-2 "></i></div>
             </a>
         </div>
-      <div class="collapse  show" id="其它-collapse">
+      <div class="collapse  show" id="spark-collapse">
         <ul class="list-unstyled sidebar-item-contents">
+          <li class="sidebar-item">
+  <a href="../../../rmd/programming/spark/install.html" class="">安装</a>
+</li>
+          <li class="sidebar-item">
+  <a href="../../../rmd/programming/spark/read-hbase.html" class="">读取Hbase</a>
+</li>
+          <li class="sidebar-item">
+  <a href="../../../rmd/programming/spark/read-mysql.html" class="">读取 MySQL</a>
+</li>
+          <li class="sidebar-item">
+  <a href="../../../rmd/programming/spark/submit-run-task.html" class="">服务器提交运行任务</a>
+</li>
+        </ul>
+      </div>
+    </li>
+  </ul>
+      <ul class="list-unstyled sidebar-section depth1">
+    <li class="">
+        <div class="me-auto ">
+            <a class="sidebar-section-item d-inline-flex text-start w-100 " data-bs-toggle="collapse" data-bs-target="#leetcode-collapse" aria-expanded="true">
+              <div class="me-auto  sidebar-section-item">Leet code</div>
+            <div><i class="bi bi-chevron-right ms-2 "></i></div>
+            </a>
+        </div>
+      <div class="collapse  show" id="leetcode-collapse">
+        <ul class="list-unstyled sidebar-item-contents">
+          <li class="sidebar-item">
+  <a href="../../../rmd/programming/leetcode/refrence.html" class="">Leet code 参考资料</a>
+</li>
+        </ul>
+      </div>
+    </li>
+  </ul>
+      <ul class="list-unstyled sidebar-section depth1">
+    <li class="">
+        <div class="me-auto ">
+            <a class="sidebar-section-item d-inline-flex text-start w-100 " data-bs-toggle="collapse" data-bs-target="#软件-collapse" aria-expanded="true">
+              <div class="me-auto  sidebar-section-item">软件</div>
+            <div><i class="bi bi-chevron-right ms-2 "></i></div>
+            </a>
+        </div>
+      <div class="collapse  show" id="软件-collapse">
+        <ul class="list-unstyled sidebar-item-contents">
+          <li class="sidebar-item">
+  <a href="../../../rmd/programming/software/vim.html" class="">Vim</a>
+</li>
+          <li class="sidebar-item">
+  <a href="../../../rmd/programming/software/latex.html" class="">LaTex</a>
+</li>
         </ul>
       </div>
     </li>
@@ -174,20 +224,22 @@
   <div class="col mx-auto col-sm-12 col-md-9 col-lg-7 col-xl-7 px-lg-4 pe-xxl-4 ps-xxl-0">
 <main>
 <header id="title-block-header">
-<h1 class="title d-none d-lg-block display-7">动手学深度学习</h1>
+<h1 class="title d-none d-lg-block display-7">pytorch 参考</h1>
 </header>
-<p><a href="http://tangshusen.me/Dive-into-DL-PyTorch/#/">《动手学深度学习》</a>: 《Dive into Deep Learning》原书中的MXNet实现改为PyTorch实现</p>
-<p><a href="https://github.com/foochane?tab=repositories">参考资料</a></p>
-<p><a href="https://github.com/Jonezhen/CSBook">CSBook</a></p>
+<p><a href="https://github.com/zergtant/pytorch-handbook">pytorch handbook</a></p>
+<p><a href="https://github.com/yunjey/pytorch-tutorial">Pytorch Tutorial</a></p>
 <!-- -->
 </main>
 <div class="page-navigation page-navigation-docked">
   <div class="nav-page nav-page-previous">
-      <a href="../../../rmd/algorithm/reinforcement_learning/about.html">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">关于</span>
+      <a href="../../../rmd/programming/python/frequent-function.html">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">常用方法</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="../../../rmd/programming/R/about.html">
+        <span class="nav-page-text">常用方法</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </div>
 </div> <!-- /main column -->

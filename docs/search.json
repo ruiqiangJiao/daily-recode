@@ -15,7 +15,7 @@
     "href": "refrence.html",
     "title": "参考",
     "section": "",
-    "text": "Z-Library: 全球最大的数字图书馆\nComputer Age Statistical Inference\nApacheCN\n强化学习\nMann-Kendall Test For Monotonic Trend\npytorch handbook\nLearning from data\nPytorch Tutorial"
+    "text": "Z-Library: 全球最大的数字图书馆"
   },
   {
     "href": "rmd\\algorithm\\deep_learning\\dive_into_deep_learning.html",
@@ -37,15 +37,15 @@
   },
   {
     "href": "rmd\\algorithm\\reinforcement_learning\\about.html",
-    "title": "关于",
+    "title": "参考文档",
     "section": "",
-    "text": ""
+    "text": "强化学习"
   },
   {
     "href": "rmd\\algorithm\\statistics\\elements_of_statistical_learning.html",
     "title": "The Elements of Statistical Learning",
     "section": "",
-    "text": "The Elements of Statistical Learning"
+    "text": "The Elements of Statistical Learning\nComputer Age Statistical Inference"
   },
   {
     "href": "rmd\\algorithm\\statistics\\isolation_forest.html",
@@ -90,6 +90,12 @@
     "text": "series = df.groupby(by='Mt',as_index=True).apply(lambda p:[','.join(p['Sp'])])\ndf_result = pd.DataFrame({'Mt':series.index, 'Sp': series.values})\ndf_result\n\n\n\n\n  \n    \n      \n      Mt\n      Sp\n    \n  \n  \n    \n      0\n      s1\n      [a,b]\n    \n    \n      1\n      s2\n      [c,d,e]\n    \n    \n      2\n      s3\n      [f]\n    \n  \n\n\n\n\npandarallel\nparatext\nPython 数据分析\n颜色色卡"
   },
   {
+    "href": "rmd\\programming\\python\\pytorch.html",
+    "title": "pytorch 参考",
+    "section": "",
+    "text": "pytorch handbook\nPytorch Tutorial"
+  },
+  {
     "href": "rmd\\programming\\python\\read-mysql.html#代码样例",
     "title": "读取 MySQL",
     "section": "代码样例",
@@ -123,7 +129,7 @@
     "href": "rmd\\programming\\spark\\install.html",
     "title": "安装",
     "section": "",
-    "text": "pyspark中的python依赖管理\n目前管理pyspark的python依赖有两种方式：\n1.打包虚拟环境成压缩包,用–py-files或者–archives提交压缩虚拟环境。\n2.pyspark自己生成虚拟环境的方式，仅限于yarn client和yarn cluster模式。\nUsing VirtualEnv with PySpark\n我们是本地模式运行spark所以用第一种方式，管理python依赖的方式也有好几种如canda，Virtualenv，pex都可以，可以参考这篇文章：https://。databricks.com/blog/2020/12/22/how-to-manage-python-dependencies-in-pyspark.html我们尝试用比较熟悉的方式Virtualenv 管理依赖。\nHow to Manage Python Dependencies in PySpark\n我们此次用的是python 3.x来创建虚拟环境，进入虚拟环境，安装需要的python包，打包虚拟环境\npython3.5 -m venv pyspark_venv\nsource pyspark_venv/bin/activate\npip install pyarrow pandas venv-pack\nvenv-pack -o pyspark_venv.tar.gz\n\n\n\n\n\n\nWarning\n\n\n\n我们前面提到打包提交的方式可以用–py-files配置，也可以用–archives来配置；用–archives配置时要加上#environment，用–py-files配置时不需要，同时–py-file还支持xxx.zip文件及多个python files，–archives也支持多个文件。\n\n\n\n\n\n\n\n\nWarning\n\n\n\n目前测试发现仅能在虚拟环境内部才能执行带有python依赖的pyspark程序，退出虚拟环境执行不了。这个问题是因为退出虚拟环境提交pyspark用的是python xxxx.py去执行的，本地python命令指向的是python 2.x，而这个2.x的系统python环境比如没有装pandas就会报错：ImportError: No module named pandas。解决这一问题需要在提交命令中加入配置\n\n\n--conf \"spark.pyspark.python=/usr/bin/python3.5\"\n完整的命令是：\nspark-submit --master local[*] --num-executors 20 --executor-cores 2 --executor-memory 10g --driver-memory 6g --driver-cores 2 --conf \"spark.pyspark.python=/usr/bin/python3.5\" --archives /usr/local/lib/python3.5/pyspark_venv.tar.gz#environment /data/read_hbase.py\nWindows平台下单机Spark环境搭建\njar 包\nLearning Spark"
+    "text": "pyspark中的python依赖管理\n目前管理pyspark的python依赖有两种方式：\n1.打包虚拟环境成压缩包,用–py-files或者–archives提交压缩虚拟环境。\n2.pyspark自己生成虚拟环境的方式，仅限于yarn client和yarn cluster模式。\nUsing VirtualEnv with PySpark\n我们是本地模式运行spark所以用第一种方式，管理python依赖的方式也有好几种如canda，Virtualenv，pex都可以，可以参考这篇文章：https://。databricks.com/blog/2020/12/22/how-to-manage-python-dependencies-in-pyspark.html我们尝试用比较熟悉的方式Virtualenv 管理依赖。\nHow to Manage Python Dependencies in PySpark\n我们此次用的是python 3.x来创建虚拟环境，进入虚拟环境，安装需要的python包，打包虚拟环境\npython3.5 -m venv pyspark_venv\nsource pyspark_venv/bin/activate\npip install pyarrow pandas venv-pack\nvenv-pack -o pyspark_venv.tar.gz\n\n\n\n\n\n\nWarning\n\n\n\n我们前面提到打包提交的方式可以用–py-files配置，也可以用–archives来配置；用–archives配置时要加上#environment，用–py-files配置时不需要，同时–py-file还支持xxx.zip文件及多个python files，–archives也支持多个文件。\n\n\n\n\n\n\n\n\nWarning\n\n\n\n目前测试发现仅能在虚拟环境内部才能执行带有python依赖的pyspark程序，退出虚拟环境执行不了。这个问题是因为退出虚拟环境提交pyspark用的是python xxxx.py去执行的，本地python命令指向的是python 2.x，而这个2.x的系统python环境比如没有装pandas就会报错：ImportError: No module named pandas。解决这一问题需要在提交命令中加入配置\n\n\n--conf \"spark.pyspark.python=/usr/bin/python3.5\"\n完整的命令是：\nspark-submit --master local[*] --num-executors 20 --executor-cores 2 --executor-memory 10g --driver-memory 6g --driver-cores 2 --conf \"spark.pyspark.python=/usr/bin/python3.5\" --archives /usr/local/lib/python3.5/pyspark_venv.tar.gz#environment /data/read_hbase.py\nWindows平台下单机Spark环境搭建\njar 包\nLearning Spark\nApacheCN"
   },
   {
     "href": "rmd\\programming\\spark\\read-hbase.html#安装包",

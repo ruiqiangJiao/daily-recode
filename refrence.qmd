@@ -7,26 +7,13 @@ jupyter: python3
 [Z-Library](https://1lib.limited/s/?): 全球最大的数字图书馆
 
 
-[Computer Age Statistical Inference](https://web.stanford.edu/~hastie/CASI_files/PDF/casi.pdf)
-
-
-[ApacheCN](https://apachecn.org/)
 
 
 
 
 
-[强化学习](https://spinningup.readthedocs.io/zh_CN/latest/)
 
 
-[Mann-Kendall Test For Monotonic Trend](https://vsp.pnnl.gov/help/Vsample/Design_Trend_Mann_Kendall.htm)
 
 
-[pytorch handbook](https://github.com/zergtant/pytorch-handbook)
-
-
-[Learning from data](https://github.com/fengdu78/Learning-from-data)
-
-
-[Pytorch Tutorial](https://github.com/yunjey/pytorch-tutorial)
 

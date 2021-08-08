@@ -1,4 +1,7 @@
 ---
-title: "关于"
+title: "参考文档"
 jupyter: python3
 ---
+
+
+[强化学习](https://spinningup.readthedocs.io/zh_CN/latest/)
