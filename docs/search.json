@@ -178,5 +178,17 @@
     "title": "服务器提交运行任务",
     "section": "mesos模式",
     "text": "该模式是spark官方推荐的运行模式。但目前公司未使用，mosos也是一个集群资源管理器，mesos提供粗粒度和细粒度的资源管理模式，但是目前由于细粒度的管理模式相对繁琐，已弃用，保留的粗粒度管理模式和yarn的资源管理很类似，公司选择了yarn来管理，所以这里我们就不细说了，可以自行去查资料了解。\n目前从上面4种运行模式来看，pyspark的运行速度都赶不上spark，因为涉及python进程和jvm进程数据交互，所以建议从pyspark熟悉后采用spark来执行，因为api几乎都是一样的。"
+  },
+  {
+    "href": "rmd\\programming\\SQL\\MySQL.html#合并两个-sql-查询",
+    "title": "MySQL",
+    "section": "合并两个 SQL 查询",
+    "text": "SELECT get.daytime, get.data as get, xh.data as xh \n        FROM ( \n                SELECT daytime, sum(get_sum) as data \n                FROM yuanbao_get \n                group by daytime \n                order by daytime \n        ) as get, \n        ( \n                SELECT daytime, sum(xh_sum) as data \n                FROM yuanbao_xh \n                group by daytime \n                order by daytime \n        ) as xh \n        where get.daytime = xh.daytime"
+  },
+  {
+    "href": "rmd\\programming\\SQL\\MySQL.html#每日新增",
+    "title": "MySQL",
+    "section": "每日新增",
+    "text": "select\n  min_date,count(distinct user_id) as per_day_new\nfrom\n(\n  select\n    user_id,\n    min(log_date) as min_date\n  from table\n  group by user_id\n)t\ngroup by min_date"
   }
 ]

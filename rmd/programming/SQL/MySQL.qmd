@@ -1,0 +1,46 @@
+---
+title: "MySQL"
+jupyter: python3
+---
+
+
+## 合并两个 SQL 查询
+
+```SQL
+SELECT get.daytime, get.data as get, xh.data as xh 
+        FROM ( 
+                SELECT daytime, sum(get_sum) as data 
+                FROM yuanbao_get 
+                group by daytime 
+                order by daytime 
+        ) as get, 
+        ( 
+                SELECT daytime, sum(xh_sum) as data 
+                FROM yuanbao_xh 
+                group by daytime 
+                order by daytime 
+        ) as xh 
+        where get.daytime = xh.daytime
+
+```
+
+
+## 每日新增
+
+```SQL
+select
+  min_date,count(distinct user_id) as per_day_new
+from
+(
+  select
+    user_id,
+    min(log_date) as min_date
+  from table
+  group by user_id
+)t
+group by min_date
+```
+
+
+
+
