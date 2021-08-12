@@ -106,7 +106,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary ">
     <div class="container-fluid">
   <a class="navbar-brand" href="../../../index.html">
-    日常记录
+    <span class="navbar-title">日常记录</span>
   </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
@@ -114,24 +114,19 @@
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../../index.html">
- 主页</a>
+    <a class="nav-link" href="../../../index.html">主页</a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../../about.html">
- 关于</a>
+    <a class="nav-link" href="../../../about.html">关于</a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../../refrence.html">
- 参考</a>
+    <a class="nav-link" href="../../../refrence.html">参考</a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../../../rmd/programming/python/read-redis-cluster.html" aria-current="page">
- 编程</a>
+    <a class="nav-link active" href="../../../rmd/programming/python/read-redis-cluster.html" aria-current="page">编程</a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../../rmd/algorithm/statistics/elements_of_statistical_learning.html">
- 算法</a>
+    <a class="nav-link" href="../../../rmd/algorithm/statistics/elements_of_statistical_learning.html">算法</a>
   </li>  
 </ul>
           <form class="d-flex mb-0">
@@ -155,7 +150,7 @@
   <div id="quarto-sidebar" class="col col-12 col-lg-3 d-lg-flex px-0 pt-0 sidebar collapse sidebar-navigation">
     <nav class="me-lg-auto py-2 docked  overflow-scroll">
   <div class="sidebar-menu-container"> 
-  <ul class="list-unstyled mt-3 px-3">
+  <ul class="list-unstyled mt-1 px-3">
       <ul class="list-unstyled sidebar-section depth1">
     <li class="">
         <div class="me-auto ">
@@ -309,6 +304,11 @@
 <li><a href="#jar-包" class="nav-link" data-scroll-target="#jar-包">jar 包</a></li>
 </ul></li>
 <li><a href="#测试样例" class="nav-link" data-scroll-target="#测试样例">测试样例</a></li>
+<li><a href="#客户端读取" class="nav-link" data-scroll-target="#客户端读取">客户端读取</a>
+<ul class="collapse">
+<li><a href="#需要安装的包" class="nav-link" data-scroll-target="#需要安装的包">需要安装的包</a></li>
+<li><a href="#测试样例-1" class="nav-link" data-scroll-target="#测试样例-1">测试样例</a></li>
+</ul></li>
 </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/ruiqiangJiao/daily-recode/edit/main/rmd\programming\spark\read-hbase.qmd">Edit this page</a></p></div></div></nav></div>
   <div class="col mx-auto col-sm-12 col-md-9 col-lg-7 col-xl-7 px-lg-4 pe-xxl-4 ps-xxl-0">
@@ -401,9 +401,52 @@
 <span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>   <span class="co"># spark_session 中的 sparkContext 对象可读取 hbase、hdfs</span></span>
 <span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>   sc <span class="op">=</span> spark_session.sparkContext</span>
 <span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>   rdd_data <span class="op">=</span> get_hbase_terminal_info()</span>
-<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>   <span class="bu">print</span>(rdd_data.take(<span class="dv">1</span>))</span>
-<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>   <span class="bu">print</span>(rdd_data.take(<span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="客户端读取" class="level2">
+<h2 class="anchored" data-anchor-id="客户端读取">客户端读取</h2>
+<section id="需要安装的包" class="level3">
+<h3 class="anchored" data-anchor-id="需要安装的包">需要安装的包</h3>
+<ul>
+<li><p>happybase==1.2.0</p></li>
+<li><p>ply==3.11</p></li>
+<li><p>protobuf==3.13.0</p></li>
+<li><p>six==1.15.0</p></li>
+<li><p>thriftpy2==0.4.11</p></li>
+</ul>
+<p>使用hbase thrift 连接hbase，读取数据，python 端使用 happybase 连接服务器</p>
+</section>
+<section id="测试样例-1" class="level3">
+<h3 class="anchored" data-anchor-id="测试样例-1">测试样例</h3>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># -*- coding=utf-8 -*-</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> happybase</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> json</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> T_pb2 <span class="im">as</span> TReport</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>HBASE_DATABASE <span class="op">=</span> {<span class="st">'host'</span>: <span class="st">""</span>, <span class="st">'port'</span>: }</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>connection <span class="op">=</span> happybase.Connection(<span class="op">**</span>HBASE_DATABASE)</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>report <span class="op">=</span> connection.table(name<span class="op">=</span>table_name)</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>data_list <span class="op">=</span> <span class="bu">range</span>(<span class="dv">0</span>, <span class="dv">100</span>)</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>res <span class="op">=</span> <span class="bu">list</span>()</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> t <span class="kw">in</span> data_list:</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(t)</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>    a <span class="op">=</span> t[::<span class="op">-</span><span class="dv">1</span>]</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>    u_list <span class="op">=</span> <span class="bu">list</span>()</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> key, value <span class="kw">in</span> report.scan():</span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>        lr <span class="op">=</span> TReport.T()</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>        lr.ParseFromString(value[<span class="st">b'F:C'</span>])</span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(lr)</span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>        u <span class="op">=</span> lr.terminal_status.u</span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>        u_list.extend([uart])</span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>    res.extend([{<span class="st">'t'</span>: t, <span class="st">"u_len"</span>: <span class="bu">len</span>(u_list), <span class="st">"u_sum"</span>: <span class="bu">sum</span>(u_list)}])</span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>df_all <span class="op">=</span> pd.DataFrame(res)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
 <!-- -->
+</section>
 </section>
 </main>
 <div class="page-navigation page-navigation-docked">

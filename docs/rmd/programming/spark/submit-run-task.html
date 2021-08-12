@@ -106,7 +106,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary ">
     <div class="container-fluid">
   <a class="navbar-brand" href="../../../index.html">
-    日常记录
+    <span class="navbar-title">日常记录</span>
   </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
@@ -114,24 +114,19 @@
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../../index.html">
- 主页</a>
+    <a class="nav-link" href="../../../index.html">主页</a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../../about.html">
- 关于</a>
+    <a class="nav-link" href="../../../about.html">关于</a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../../refrence.html">
- 参考</a>
+    <a class="nav-link" href="../../../refrence.html">参考</a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../../../rmd/programming/python/read-redis-cluster.html" aria-current="page">
- 编程</a>
+    <a class="nav-link active" href="../../../rmd/programming/python/read-redis-cluster.html" aria-current="page">编程</a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../../rmd/algorithm/statistics/elements_of_statistical_learning.html">
- 算法</a>
+    <a class="nav-link" href="../../../rmd/algorithm/statistics/elements_of_statistical_learning.html">算法</a>
   </li>  
 </ul>
           <form class="d-flex mb-0">
@@ -155,7 +150,7 @@
   <div id="quarto-sidebar" class="col col-12 col-lg-3 d-lg-flex px-0 pt-0 sidebar collapse sidebar-navigation">
     <nav class="me-lg-auto py-2 docked  overflow-scroll">
   <div class="sidebar-menu-container"> 
-  <ul class="list-unstyled mt-3 px-3">
+  <ul class="list-unstyled mt-1 px-3">
       <ul class="list-unstyled sidebar-section depth1">
     <li class="">
         <div class="me-auto ">
@@ -413,6 +408,7 @@ Warning
 <h2 class="anchored" data-anchor-id="mesos模式">mesos模式</h2>
 <p>该模式是spark官方推荐的运行模式。但目前公司未使用，mosos也是一个集群资源管理器，mesos提供粗粒度和细粒度的资源管理模式，但是目前由于细粒度的管理模式相对繁琐，已弃用，保留的粗粒度管理模式和yarn的资源管理很类似，公司选择了yarn来管理，所以这里我们就不细说了，可以自行去查资料了解。</p>
 <p>目前从上面4种运行模式来看，pyspark的运行速度都赶不上spark，因为涉及python进程和jvm进程数据交互，所以建议从pyspark熟悉后采用spark来执行，因为api几乎都是一样的。</p>
+
 <!-- -->
 </section>
 </main>

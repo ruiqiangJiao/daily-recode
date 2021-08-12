@@ -96,8 +96,56 @@ if __name__ == "__main__":
    sc = spark_session.sparkContext
    rdd_data = get_hbase_terminal_info()
    print(rdd_data.take(1))
-
-
 ```
+
+## 客户端读取
+
+### 需要安装的包
+
+- happybase==1.2.0
+
+- ply==3.11
+
+- protobuf==3.13.0
+
+- six==1.15.0
+
+- thriftpy2==0.4.11
+
+
+使用hbase thrift 连接hbase，读取数据，python 端使用 happybase 连接服务器
+
+### 测试样例
+
+```python
+# -*- coding=utf-8 -*-
+
+import happybase
+import pandas as pd
+import json
+import T_pb2 as TReport
+
+HBASE_DATABASE = {'host': "", 'port': }
+connection = happybase.Connection(**HBASE_DATABASE)
+report = connection.table(name=table_name)
+
+data_list = range(0, 100)
+
+res = list()
+for t in data_list:
+    print(t)
+    a = t[::-1]
+    u_list = list()
+    for key, value in report.scan():
+        lr = TReport.T()
+        lr.ParseFromString(value[b'F:C'])
+        print(lr)
+        u = lr.terminal_status.u
+        u_list.extend([uart])
+    res.extend([{'t': t, "u_len": len(u_list), "u_sum": sum(u_list)}])
+df_all = pd.DataFrame(res)
+```
+
+
 
 
