@@ -27,14 +27,13 @@ df_result
 ```
 
 
-## 展示表格
+##  jupyter note 展示表格
 
 ```{python}
 import pandas as pd
 from IPython.core.interactiveshell import InteractiveShell
 InteractiveShell.ast_node_interactivity = "all"
 
-pd.set_option('display.float_format',lambda x : '%.2f' % x)
 ```
 
 
@@ -46,6 +45,16 @@ table.dataframe td, table.dataframe th {
   color: black !important;
 }
 </style>
+```
+
+
+## 编辑器显示问题
+
+
+- 打印非科学计数
+
+```{python}
+pd.set_option('display.float_format',lambda x : '%.2f' % x)
 ```
 
 
