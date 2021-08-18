@@ -87,7 +87,7 @@
     "href": "rmd\\programming\\python\\frequent-function.html#同一个组进行合并",
     "title": "常用方法",
     "section": "同一个组进行合并",
-    "text": "series = df.groupby(by='Mt',as_index=True).apply(lambda p:[','.join(p['Sp'])])\ndf_result = pd.DataFrame({'Mt':series.index, 'Sp': series.values})\ndf_result\n\n\n\n\n  \n    \n      \n      Mt\n      Sp\n    \n  \n  \n    \n      0\n      s1\n      [a,b]\n    \n    \n      1\n      s2\n      [c,d,e]\n    \n    \n      2\n      s3\n      [f]\n    \n  \n\n\n\n\npandarallel\nparatext\nPython 数据分析\n颜色色卡"
+    "text": "series = df.groupby(by='Mt',as_index=True).apply(lambda p:[','.join(p['Sp'])])\ndf_result = pd.DataFrame({'Mt':series.index, 'Sp': series.values})\ndf_result\n\n\n\n\n  \n    \n      \n      Mt\n      Sp\n    \n  \n  \n    \n      0\n      s1\n      [a,b]\n    \n    \n      1\n      s2\n      [c,d,e]\n    \n    \n      2\n      s3\n      [f]"
   },
   {
     "href": "rmd\\programming\\python\\pytorch.html",
@@ -196,5 +196,11 @@
     "title": "MySQL",
     "section": "每日新增",
     "text": "select\n  min_date,count(distinct user_id) as per_day_new\nfrom\n(\n  select\n    user_id,\n    min(log_date) as min_date\n  from table\n  group by user_id\n)t\ngroup by min_date"
+  },
+  {
+    "href": "rmd\\programming\\python\\frequent-function.html#展示表格",
+    "title": "常用方法",
+    "section": "展示表格",
+    "text": "import pandas as pd\nfrom IPython.core.interactiveshell import InteractiveShell\nInteractiveShell.ast_node_interactivity = \"all\"\n\npd.set_option('display.float_format',lambda x : '%.2f' % x)\n\n%%HTML\n<style type=\"text/css\">\ntable.dataframe td, table.dataframe th {\n    border: 1px  black solid !important;\n  color: black !important;\n}\n</style>\npandarallel\nparatext\nPython 数据分析\n颜色色卡"
   }
 ]

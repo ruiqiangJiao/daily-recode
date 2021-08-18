@@ -27,6 +27,28 @@ df_result
 ```
 
 
+## 展示表格
+
+```{python}
+import pandas as pd
+from IPython.core.interactiveshell import InteractiveShell
+InteractiveShell.ast_node_interactivity = "all"
+
+pd.set_option('display.float_format',lambda x : '%.2f' % x)
+```
+
+
+```HTML
+%%HTML
+<style type="text/css">
+table.dataframe td, table.dataframe th {
+    border: 1px  black solid !important;
+  color: black !important;
+}
+</style>
+```
+
+
 [pandarallel](https://github.com/nalepae/pandarallel)
 
 [paratext](https://github.com/wiseio/paratext)
