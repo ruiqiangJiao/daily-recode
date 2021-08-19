@@ -46,6 +46,8 @@ site:
           - rmd/programming/spark/read-hbase.qmd
           - rmd/programming/spark/read-mysql.qmd
           - rmd/programming/spark/submit-run-task.qmd
+          - rmd/programming/spark/hadoop.qmd
+          - rmd/programming/spark/hive.qmd
         - section: "SQL"
           contents:
           - rmd/programming/SQL/MySQL.qmd

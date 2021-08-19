@@ -142,3 +142,61 @@ pip3 install  packages
 该模式是spark官方推荐的运行模式。但目前公司未使用，mosos也是一个集群资源管理器，mesos提供粗粒度和细粒度的资源管理模式，但是目前由于细粒度的管理模式相对繁琐，已弃用，保留的粗粒度管理模式和yarn的资源管理很类似，公司选择了yarn来管理，所以这里我们就不细说了，可以自行去查资料了解。
 
 目前从上面4种运行模式来看，pyspark的运行速度都赶不上spark，因为涉及python进程和jvm进程数据交互，所以建议从pyspark熟悉后采用spark来执行，因为api几乎都是一样的。
+
+
+### Spark提交任务参数说明
+
+
+- --class 入口类名，对于Java和Scala程序来说是包含main()的类的名字，python程序则无须指定该选项
+
+- --master 集群master的地址
+    
+    - local     ：以本地单线程运行Spark
+    
+    - local[N]  ：以本地多个线程运行Spark
+    
+    - local[*]  ：以本地模式运行Spark，线程数等于机器的内核数
+    
+    - spark://host:port ：连接指定的Standalone集群运行spark
+    
+    - yarn-client ：以client模式连接到YARN集群，集群位置将通过HADOOP_CONF_DIR环境变量获得
+    
+    - yarn-cluster ：以cluster模式连接到YARN集群，集群位置将通过HADOOP_CONF_DIR环境变量获得
+    
+    - mesos://host:port ： 连接指定的Standalone集群运行spark
+    
+- --deploy-mode 程序部署模式
+
+  将driver部署到worker节点(cluster模式)或者作为外部客户端部署到本地(client模式)，默认情况下是client模式
+  
+  - client：执行Spark-submit命令的机器上启动Drive程序
+    
+  - cluster：会在其中一台工作节点上运行drive程序
+    
+- --jars  第三方发布的Jar包，多个jar包需要用英文的逗号隔开
+
+- --num-executors：executor进程数
+
+- --executor-cores：
+
+executor进程分配到的核数,单个executor能并发执行task数
+
+- --executor-memory：executor进程分配到的内存大小，根据job需求以及并发数设置
+
+- --py-files：用于上传.py,.zip和.egg的文件
+
+- --driver-memory：指定drive进程进行分配内存大小
+
+- --conf spark.storage.memoryFraction：设置内存用来作为cache的比例(=0.1)
+
+- --conf spark.hadoop.fs.hdfs.impl.disable.cache：禁止使用内存cache(=true) 
+
+- --conf spark.default.parallelism: 控制Spark中的分布式shuffle过程默认使用的task数量，默认Others: total number of cores on all executor nodes or 2, whichever is larger，每一个CPU核(core)分配2-3个任务(=400)
+
+- --conf spark.yarn.executor.memoryOverhead: JVM进程中除Java堆以外占用的空间大小，包括方法区(永久代)、Java虚拟机栈、本地方法栈、JVM进程本身所用的内存、直接内存(Direct Memory)等(=5000)
+
+- --conf spark.kryoserializer.buffer: 在每一个work的每一个core上都有一个初始化的buffer, 这些buffer的最大的可达到conf spark.kryoserializer.buffer.max参数设置的参数
+
+- --conf spark.kryoserializer.buffer.max 用来设置对象序列化占用空间大小(=2000m)
+
+- --conf spark.driver.maxResultSize:表所有分区的序列化运行总的内存限制 ,控制worker送回driver的数据大小，一旦操过该限制，driver会终止执行(=10g) 

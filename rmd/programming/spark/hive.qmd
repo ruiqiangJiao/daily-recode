@@ -1,0 +1,40 @@
+---
+title: "Hive"
+jupyter: python3
+---
+
+## 关联
+
+hive中join的方式分为两种，一种是Common Join(Reduce阶段完成join)和Map Join(Map阶段完成join)
+
+- Map阶段
+
+    - 读取元数据 , 输出key和values
+
+- Shuffle阶段
+
+    - 将key和values按照不同的hash值推送到不同的reduce，确保两个表中相同的key位于同一个reduce中
+
+- Reduce阶段
+
+    - 根据key的值完成join操作，期间通过Tag来识别不同表中的数据
+
+![流程图](../../../img/programming/spark/06_common_join.png)
+
+### Map Join
+
+![流程图](../../../img/programming/spark/06_map_join.png)
+
+
+总结:
+   
+使用场景:
+    
+(1)  有一个极小的表<1000行
+    
+(2)  需要做不等值join操作(a.x < b.y 或者 a.x like b.y)
+
+
+```sql
+select /*+MAPJOIN(a) */ a.start_level,b.* fromdim_level a join (select * fromtest) b where b.xx>=a.start_level and b.xx<end_level;
+```

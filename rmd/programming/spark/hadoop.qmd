@@ -1,0 +1,18 @@
+---
+title: "hadoop 常用命令"
+jupyter: python3
+---
+
+## 文件操作
+
+- 从两个不同的集群复制文件
+
+```python
+hadoop distcp hdfs:/cluster/user/a/b /user/a/b
+```
+
+- 删除垃圾回收站中文件
+
+```python
+hadoop fs -rm -R -skipTrash /user/jiaoruiqiang/.Trash/Current/user/hive/warehouse/a.db
+```
