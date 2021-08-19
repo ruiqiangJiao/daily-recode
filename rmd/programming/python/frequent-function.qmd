@@ -58,6 +58,8 @@ pd.set_option('display.float_format',lambda x : '%.2f' % x)
 ```
 
 
+## 参考
+
 [pandarallel](https://github.com/nalepae/pandarallel)
 
 [paratext](https://github.com/wiseio/paratext)
@@ -65,3 +67,5 @@ pd.set_option('display.float_format',lambda x : '%.2f' % x)
 [Python 数据分析](https://seancheney.gitbook.io/python-for-data-analysis-2nd/)
 
 [颜色色卡](https://www.colorhexa.com/)
+
+[读取 druid](https://github.com/druid-io/pydruid)

@@ -213,6 +213,12 @@
     "href": "rmd\\programming\\python\\frequent-function.html#编辑器显示问题",
     "title": "常用方法",
     "section": "编辑器显示问题",
-    "text": "打印非科学计数\n\n\npd.set_option('display.float_format',lambda x : '%.2f' % x)\n\npandarallel\nparatext\nPython 数据分析\n颜色色卡"
+    "text": "打印非科学计数\n\n\npd.set_option('display.float_format',lambda x : '%.2f' % x)"
+  },
+  {
+    "href": "rmd\\programming\\python\\frequent-function.html#参考",
+    "title": "常用方法",
+    "section": "参考",
+    "text": "pandarallel\nparatext\nPython 数据分析\n颜色色卡\n读取 druid"
   }
 ]
