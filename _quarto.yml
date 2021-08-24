@@ -58,7 +58,9 @@ site:
           contents:
           - rmd/programming/software/vim.qmd
           - rmd/programming/software/latex.qmd
-         
+        - section: 'Linux'
+          contents:
+          - rmd/programming/linux/frequent-function.qmd
     - id: algorithm
       title: "算法"
       contents:

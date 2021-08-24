@@ -57,7 +57,6 @@ spark-submit --master local[*] --num-executors 20 --executor-cores 2 --executor-
 
 [jar 包](https://mvnrepository.com/)
 
-
 [Learning Spark](https://waltyou.github.io/Learning-Spark-0/)
 
 [ApacheCN](https://apachecn.org/)

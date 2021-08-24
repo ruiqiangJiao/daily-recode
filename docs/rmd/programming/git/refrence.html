@@ -3,7 +3,7 @@
   <meta charset="utf-8">
   <meta name="generator" content="quarto-(Local Development)">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-  <title>日常记录 – 精通Git(第二版简体中文)</title>
+  <title>日常记录 – 参考</title>
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
@@ -93,7 +93,7 @@
  git</li>
         <li>
     <a class="dropdown-item" href="../../../rmd/programming/git/refrence.html">
- 精通Git(第二版简体中文)</a>
+ 参考</a>
   </li>  
         <li><hr class="dropdown-divider"></li>
         <li class="dropdown-header">
@@ -146,6 +146,13 @@
         <li>
     <a class="dropdown-item" href="../../../rmd/programming/software/latex.html">
  LaTex</a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li class="dropdown-header">
+ Linux</li>
+        <li>
+    <a class="dropdown-item" href="../../../rmd/programming/linux/frequent-function.html">
+ linux 常用命令</a>
   </li>  
     </ul>
   </li>
@@ -200,7 +207,7 @@
 </nav>
 <nav class="quarto-secondary-nav py-2 d-lg-none d-md-block " data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <div class="container-fluid d-flex justify-content-between">
-    <h1 class="quarto-secondary-nav-title mb-0 fs-3 d-inline">精通Git(第二版简体中文)</h1>
+    <h1 class="quarto-secondary-nav-title mb-0 fs-3 d-inline">参考</h1>
     <button type="button" class="quarto-btn-toggle btn d-lg-none py-0 px-1 d-inline-block border-0 ">
       <i class="bi bi-chevron-right"></i>
     </button>
@@ -268,7 +275,7 @@
       <div class="collapse  show" id="git-collapse">
         <ul class="list-unstyled sidebar-item-contents">
           <li class="sidebar-item">
-  <a href="../../../rmd/programming/git/refrence.html" class="active">精通Git(第二版简体中文)</a>
+  <a href="../../../rmd/programming/git/refrence.html" class="active">参考</a>
 </li>
         </ul>
       </div>
@@ -360,20 +367,145 @@
       </div>
     </li>
   </ul>
+      <ul class="list-unstyled sidebar-section depth1">
+    <li class="">
+        <div class="me-auto ">
+            <a class="sidebar-section-item d-inline-flex text-start w-100 " data-bs-toggle="collapse" data-bs-target="#linux-collapse" aria-expanded="true">
+              <div class="me-auto  sidebar-section-item">Linux</div>
+            <div><i class="bi bi-chevron-right ms-2 "></i></div>
+            </a>
+        </div>
+      <div class="collapse  show" id="linux-collapse">
+        <ul class="list-unstyled sidebar-item-contents">
+          <li class="sidebar-item">
+  <a href="../../../rmd/programming/linux/frequent-function.html" class="">linux 常用命令</a>
+</li>
+        </ul>
+      </div>
+    </li>
+  </ul>
   </ul>
   </div>
 </nav>
   </div>
-  <div id="quarto-toc-sidebar" class="col col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-toc order-last"></div>
+  <div id="quarto-toc-sidebar" class="col col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-toc order-last"><nav id="TOC" role="doc-toc">
+<h2 id="toc-title">On this page</h2>
+<ul>
+<li><a href="#gitlab" class="nav-link active" data-scroll-target="#gitlab">gitlab</a></li>
+<li><a href="#bitbucket" class="nav-link" data-scroll-target="#bitbucket">bitbucket</a></li>
+<li><a href="#工具" class="nav-link" data-scroll-target="#工具">工具</a>
+<ul class="collapse">
+<li><a href="#sourcetree" class="nav-link" data-scroll-target="#sourcetree">SourceTree</a></li>
+</ul></li>
+<li><a href="#参考" class="nav-link" data-scroll-target="#参考">参考</a></li>
+</ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/ruiqiangJiao/daily-recode/edit/main/rmd\programming\git\refrence.qmd">Edit this page</a></p></div></div></nav></div>
   <div class="col mx-auto col-sm-12 col-md-9 col-lg-7 col-xl-7 px-lg-4 pe-xxl-4 ps-xxl-0">
 <main>
 <header id="title-block-header">
-<h1 class="title d-none d-lg-block display-7">精通Git(第二版简体中文)</h1>
+<h1 class="title d-none d-lg-block display-7">参考</h1>
 </header>
+
+<ul>
+<li><p>创建库</p></li>
+<li><p>撤销文件</p>
+<ul>
+<li><p>git reset</p>
+<pre><code>git reset --hard    head~1
+git reset (--mixed) head~1
+git reset --soft    head~1</code></pre></li>
+<li><p>git checkout</p></li>
+<li><p>git checkout 和 git reset 的区别。</p></li>
+</ul></li>
+<li><p>恢复文件</p></li>
+</ul>
+<pre><code>git reset --hard(mixed、soft) id</code></pre>
+<ul>
+<li>删除文件</li>
+</ul>
+<pre><code>git rm file</code></pre>
+<ul>
+<li>比较文件</li>
+</ul>
+<pre><code>git diff file                 工作区和缓存区进行比较
+git diff HEAD file            工作区和最近一次提交的进行比较
+git diff --stage(cached) file 缓存区和最近一次提交的进行比较
+git diff branchName filepath  当前分支的文件与branchName 分支的文件进行比较</code></pre>
+<ul>
+<li>添加远程或者推送远程</li>
+</ul>
+<pre><code>git fetch
+git merge
+git pull</code></pre>
+<ul>
+<li><p>添加分支</p>
+<ul>
+<li><p>master： 主分支，用于版本发布；</p></li>
+<li><p>develop： 日常开发分支，保存最新开发代码；</p></li>
+<li><p>feature： 功能开发，只与develop分支进行交互；</p></li>
+<li><p>release： master分支的为测试版本；</p></li>
+<li><p>hotfix： 线上修复bug分支。</p></li>
+</ul>
+<pre><code>git branch
+git checkout 
+git branch -b </code></pre></li>
+<li><p>合并</p></li>
+<li><p>分支重演</p></li>
+</ul>
+<pre><code>git rebase</code></pre>
+<ul>
+<li><p>贮存管理</p></li>
+<li><p>标签管理</p></li>
+</ul>
+<section id="gitlab" class="level2">
+<h2 class="anchored" data-anchor-id="gitlab">gitlab</h2>
+</section>
+<section id="bitbucket" class="level2">
+<h2 class="anchored" data-anchor-id="bitbucket">bitbucket</h2>
+</section>
+<section id="工具" class="level2">
+<h2 class="anchored" data-anchor-id="工具">工具</h2>
+<section id="sourcetree" class="level3">
+<h3 class="anchored" data-anchor-id="sourcetree">SourceTree</h3>
+<ul>
+<li>跳过注册码</li>
+</ul>
+<p>在我的电脑地址栏输入</p>
+<pre><code>%LocalAppData%\Atlassian\SourceTree\</code></pre>
+<p>于是打开 SourceTree 的文件夹,新建 accounts.json 该文件的内容如下:</p>
+<pre><code>[
+  {
+    "$id": "1",
+    "$type": "SourceTree.Api.Host.Identity.Model.IdentityAccount, SourceTree.Api.Host.Identity",
+    "Authenticate": true,
+    "HostInstance": {
+      "$id": "2",
+      "$type": "SourceTree.Host.Atlassianaccount.AtlassianAccountInstance, SourceTree.Host.AtlassianAccount",
+      "Host": {
+        "$id": "3",
+        "$type": "SourceTree.Host.Atlassianaccount.AtlassianAccountHost, SourceTree.Host.AtlassianAccount",
+        "Id": "atlassian account"
+      },
+      "BaseUrl": "https://id.atlassian.com/"
+    },
+    "Credentials": {
+      "$id": "4",
+      "$type": "SourceTree.Model.BasicAuthCredentials, SourceTree.Api.Account",
+      "Username": "",
+      "Email": null
+    },
+    "IsDefault": false
+  }
+]</code></pre>
+</section>
+</section>
+<section id="参考" class="level2">
+<h2 class="anchored" data-anchor-id="参考">参考</h2>
 <p><a href="https://github.com/GruSir/vuetest/blob/master/%E7%B2%BE%E9%80%9AGit(%E7%AC%AC%E4%BA%8C%E7%89%88%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87).pdf">精通Git(第二版简体中文)</a></p>
 <p><a href="https://docs.github.com/cn/github">Github Docs</a></p>
 
 <!-- -->
+</section>
 <script type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const icon = "";

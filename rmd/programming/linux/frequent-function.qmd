@@ -1,0 +1,10 @@
+---
+title: "linux 常用命令"
+jupyter: python3
+---
+
+## 定时后台命令设置
+
+```python
+0 23 * * 1 nohup /path/run.sh temp.py > /path/temp.log 2 > &1
+```

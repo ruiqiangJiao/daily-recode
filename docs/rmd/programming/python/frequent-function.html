@@ -159,7 +159,7 @@
  git</li>
         <li>
     <a class="dropdown-item" href="../../../rmd/programming/git/refrence.html">
- 精通Git(第二版简体中文)</a>
+ 参考</a>
   </li>  
         <li><hr class="dropdown-divider"></li>
         <li class="dropdown-header">
@@ -212,6 +212,13 @@
         <li>
     <a class="dropdown-item" href="../../../rmd/programming/software/latex.html">
  LaTex</a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li class="dropdown-header">
+ Linux</li>
+        <li>
+    <a class="dropdown-item" href="../../../rmd/programming/linux/frequent-function.html">
+ linux 常用命令</a>
   </li>  
     </ul>
   </li>
@@ -334,7 +341,7 @@
       <div class="collapse  show" id="git-collapse">
         <ul class="list-unstyled sidebar-item-contents">
           <li class="sidebar-item">
-  <a href="../../../rmd/programming/git/refrence.html" class="">精通Git(第二版简体中文)</a>
+  <a href="../../../rmd/programming/git/refrence.html" class="">参考</a>
 </li>
         </ul>
       </div>
@@ -426,6 +433,23 @@
       </div>
     </li>
   </ul>
+      <ul class="list-unstyled sidebar-section depth1">
+    <li class="">
+        <div class="me-auto ">
+            <a class="sidebar-section-item d-inline-flex text-start w-100 " data-bs-toggle="collapse" data-bs-target="#linux-collapse" aria-expanded="true">
+              <div class="me-auto  sidebar-section-item">Linux</div>
+            <div><i class="bi bi-chevron-right ms-2 "></i></div>
+            </a>
+        </div>
+      <div class="collapse  show" id="linux-collapse">
+        <ul class="list-unstyled sidebar-item-contents">
+          <li class="sidebar-item">
+  <a href="../../../rmd/programming/linux/frequent-function.html" class="">linux 常用命令</a>
+</li>
+        </ul>
+      </div>
+    </li>
+  </ul>
   </ul>
   </div>
 </nav>
@@ -435,6 +459,7 @@
 <ul>
 <li><a href="#分组排序" class="nav-link active" data-scroll-target="#分组排序">分组排序</a></li>
 <li><a href="#同一个组进行合并" class="nav-link" data-scroll-target="#同一个组进行合并">同一个组进行合并</a></li>
+<li><a href="#时间处理" class="nav-link" data-scroll-target="#时间处理">时间处理</a></li>
 <li><a href="#jupyter-note-展示表格" class="nav-link" data-scroll-target="#jupyter-note-展示表格">jupyter note 展示表格</a></li>
 <li><a href="#编辑器显示问题" class="nav-link" data-scroll-target="#编辑器显示问题">编辑器显示问题</a></li>
 <li><a href="#参考" class="nav-link" data-scroll-target="#参考">参考</a></li>
@@ -595,20 +620,81 @@
 </div>
 </div>
 </section>
+<section id="时间处理" class="level2">
+<h2 class="anchored" data-anchor-id="时间处理">时间处理</h2>
+<ul>
+<li><strong>dateutil</strong></li>
+</ul>
+<div class="cell">
+<div class="sourceCode" id="cb4"><pre class="sourceCode python cell-code code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> datetime</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> dateutil <span class="im">import</span> rrule</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>today <span class="op">=</span> datetime.date.today()</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>oneday <span class="op">=</span> datetime.date(<span class="dv">2017</span>,<span class="dv">10</span> ,<span class="dv">17</span>)</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>years <span class="op">=</span> rrule.rrule(rrule.YEARLY, dtstart<span class="op">=</span>oneday, until<span class="op">=</span>today).count()</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>months <span class="op">=</span> rrule.rrule(rrule.MONTHLY, dtstart<span class="op">=</span>oneday, until<span class="op">=</span>today).count()</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>days <span class="op">=</span> rrule.rrule(rrule.DAILY, dtstart<span class="op">=</span>oneday, until<span class="op">=</span>today).count()</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(years)</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(months)</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(days)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-stdout">
+<pre><code>4
+47
+1408</code></pre>
+</div>
+</div>
+<ul>
+<li><strong>pandas</strong></li>
+</ul>
+<div class="cell">
+<div class="sourceCode" id="cb6"><pre class="sourceCode python cell-code code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd </span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> datetime , time</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>now <span class="op">=</span> datetime.datetime.now()</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>ago <span class="op">=</span> now <span class="op">-</span> pd.tseries.offsets.DateOffset(months <span class="op">=</span> <span class="dv">4</span>)</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(ago)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-stdout">
+<pre><code>2021-04-24 09:45:41.717074</code></pre>
+</div>
+</div>
+<ul>
+<li><strong>time</strong></li>
+</ul>
+<p>计算机使用时间戳和<strong>struct_time</strong>数组两种方式表示时间</p>
+<div class="cell">
+<div class="sourceCode" id="cb8"><pre class="sourceCode python cell-code code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> time</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(time.localtime(time.time()))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-stdout">
+<pre><code>time.struct_time(tm_year=2021, tm_mon=8, tm_mday=24, tm_hour=9, tm_min=45, tm_sec=41, tm_wday=1, tm_yday=236, tm_isdst=0)</code></pre>
+</div>
+</div>
+<p>格式字符串中可以使用的日期和时间符号如下:</p>
+<ul>
+<li><p>%y 两位数的年份表示（00-99）;</p></li>
+<li><p>%Y 四位数的年份表示 （000 - 9999）;</p></li>
+<li><p>%m 月份（01-12）;</p></li>
+<li><p>%d 月内中一天（0-31）;</p></li>
+<li><p>%H 24小时制小时数（0-23）;</p></li>
+<li><p>%I 12小时制小时数（01-12）;</p></li>
+<li><p>%M 分钟数（00~59）;</p></li>
+<li><p>%j 年内的一天;</p></li>
+<li><p>%U 一年中的星期数（00~53），星期天为星期的开始;</p></li>
+<li><p>%w 星期（0~6），星期天为星期的开始;</p></li>
+<li><p>%W 一年中的星期数（00~53），星期一位星期的开始.</p></li>
+</ul>
+</section>
 <section id="jupyter-note-展示表格" class="level2">
 <h2 class="anchored" data-anchor-id="jupyter-note-展示表格">jupyter note 展示表格</h2>
 <div class="cell">
-<div class="sourceCode" id="cb4"><pre class="sourceCode python cell-code code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> IPython.core.interactiveshell <span class="im">import</span> InteractiveShell</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>InteractiveShell.ast_node_interactivity <span class="op">=</span> <span class="st">"all"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode python cell-code code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> IPython.core.interactiveshell <span class="im">import</span> InteractiveShell</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>InteractiveShell.ast_node_interactivity <span class="op">=</span> <span class="st">"all"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="sourceCode" id="cb5"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>%%HTML</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;style</span> <span class="er">type</span><span class="ot">=</span><span class="st">"text/css"</span><span class="kw">&gt;</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>table<span class="fu">.dataframe</span> td<span class="op">,</span> table<span class="fu">.dataframe</span> th {</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">border</span>: <span class="dv">1</span><span class="dt">px</span>  <span class="cn">black</span> <span class="dv">solid</span> <span class="at">!important</span><span class="op">;</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="kw">color</span>: <span class="cn">black</span> <span class="at">!important</span><span class="op">;</span></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/style&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>%%HTML</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;style</span> <span class="er">type</span><span class="ot">=</span><span class="st">"text/css"</span><span class="kw">&gt;</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>table<span class="fu">.dataframe</span> td<span class="op">,</span> table<span class="fu">.dataframe</span> th {</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">border</span>: <span class="dv">1</span><span class="dt">px</span>  <span class="cn">black</span> <span class="dv">solid</span> <span class="at">!important</span><span class="op">;</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>  <span class="kw">color</span>: <span class="cn">black</span> <span class="at">!important</span><span class="op">;</span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/style&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="编辑器显示问题" class="level2">
 <h2 class="anchored" data-anchor-id="编辑器显示问题">编辑器显示问题</h2>
@@ -616,7 +702,7 @@
 <li>打印非科学计数</li>
 </ul>
 <div class="cell">
-<div class="sourceCode" id="cb6"><pre class="sourceCode python cell-code code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>pd.set_option(<span class="st">'display.float_format'</span>,<span class="kw">lambda</span> x : <span class="st">'</span><span class="sc">%.2f</span><span class="st">'</span> <span class="op">%</span> x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode python cell-code code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>pd.set_option(<span class="st">'display.float_format'</span>,<span class="kw">lambda</span> x : <span class="st">'</span><span class="sc">%.2f</span><span class="st">'</span> <span class="op">%</span> x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="参考" class="level2">
