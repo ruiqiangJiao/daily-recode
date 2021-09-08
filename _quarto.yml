@@ -81,6 +81,15 @@ site:
           contents:
             - rmd/algorithm/deep_learning/slam.qmd
             - rmd/algorithm/deep_learning/geohash.qmd
+            
+    - id: other
+      title: "其它"
+      contents:
+        - section: "网络"
+          contents:
+            - rmd/other/net/other.qmd
+        
+      
 format:
   html:
     theme: cosmo
