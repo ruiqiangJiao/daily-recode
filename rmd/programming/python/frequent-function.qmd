@@ -129,4 +129,8 @@ pd.set_option('display.float_format',lambda x : '%.2f' % x)
 
 [颜色色卡](https://www.colorhexa.com/)
 
+[Lets-Plot](https://lets-plot.org/index.html#)
+
 [读取 druid](https://github.com/druid-io/pydruid)
+
+[PacktPublishing](https://github.com/PacktPublishing)

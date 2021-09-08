@@ -117,25 +117,25 @@
     "href": "rmd\\programming\\python\\frequent-function.html#时间处理",
     "title": "常用方法",
     "section": "时间处理",
-    "text": "dateutil\n\n\nimport datetime\nfrom dateutil import rrule\ntoday = datetime.date.today()\noneday = datetime.date(2017,10 ,17)\nyears = rrule.rrule(rrule.YEARLY, dtstart=oneday, until=today).count()\nmonths = rrule.rrule(rrule.MONTHLY, dtstart=oneday, until=today).count()\ndays = rrule.rrule(rrule.DAILY, dtstart=oneday, until=today).count()\nprint(years)\nprint(months)\nprint(days)\n\n4\n47\n1408\n\n\n\npandas\n\n\nimport pandas as pd \nimport datetime , time\nnow = datetime.datetime.now()\nago = now - pd.tseries.offsets.DateOffset(months = 4)\nprint(ago)\n\n2021-04-24 09:45:41.717074\n\n\n\ntime\n\n计算机使用时间戳和struct_time数组两种方式表示时间\n\nimport time\nprint(time.localtime(time.time()))\n\ntime.struct_time(tm_year=2021, tm_mon=8, tm_mday=24, tm_hour=9, tm_min=45, tm_sec=41, tm_wday=1, tm_yday=236, tm_isdst=0)\n\n\n格式字符串中可以使用的日期和时间符号如下:\n\n%y 两位数的年份表示（00-99）;\n%Y 四位数的年份表示 （000 - 9999）;\n%m 月份（01-12）;\n%d 月内中一天（0-31）;\n%H 24小时制小时数（0-23）;\n%I 12小时制小时数（01-12）;\n%M 分钟数（00~59）;\n%j 年内的一天;\n%U 一年中的星期数（00~53），星期天为星期的开始;\n%w 星期（0~6），星期天为星期的开始;\n%W 一年中的星期数（00~53），星期一位星期的开始."
+    "text": "dateutil\n\n\nimport datetime\nfrom dateutil import rrule\ntoday = datetime.date.today()\noneday = datetime.date(2017,10 ,17)\nyears = rrule.rrule(rrule.YEARLY, dtstart=oneday, until=today).count()\nmonths = rrule.rrule(rrule.MONTHLY, dtstart=oneday, until=today).count()\ndays = rrule.rrule(rrule.DAILY, dtstart=oneday, until=today).count()\nprint(years)\nprint(months)\nprint(days)\n\n4\n47\n1423\n\n\n\npandas\n\n\nimport pandas as pd \nimport datetime , time\nnow = datetime.datetime.now()\nago = now - pd.tseries.offsets.DateOffset(months = 4)\nprint(ago)\n\n2021-05-08 14:15:37.487646\n\n\n\ntime\n\n计算机使用时间戳和struct_time数组两种方式表示时间\n\nimport time\nprint(time.localtime(time.time()))\n\ntime.struct_time(tm_year=2021, tm_mon=9, tm_mday=8, tm_hour=14, tm_min=15, tm_sec=37, tm_wday=2, tm_yday=251, tm_isdst=0)\n\n\n格式字符串中可以使用的日期和时间符号如下:\n\n%y 两位数的年份表示（00-99）;\n%Y 四位数的年份表示 （000 - 9999）;\n%m 月份（01-12）;\n%d 月内中一天（0-31）;\n%H 24小时制小时数（0-23）;\n%I 12小时制小时数（01-12）;\n%M 分钟数（00~59）;\n%j 年内的一天;\n%U 一年中的星期数（00~53），星期天为星期的开始;\n%w 星期（0~6），星期天为星期的开始;\n%W 一年中的星期数（00~53），星期一位星期的开始."
   },
   {
     "href": "rmd\\programming\\python\\frequent-function.html#jupyter-note-展示表格",
     "title": "常用方法",
     "section": "jupyter note 展示表格",
-    "text": "import pandas as pd\nfrom IPython.core.interactiveshell import InteractiveShell\nInteractiveShell.ast_node_interactivity = \"all\"\n\n%%HTML\n<style type=\"text/css\">\ntable.dataframe td, table.dataframe th {\n    border: 1px  black solid !important;\n  color: black !important;\n}\n</style>"
+    "text": "import pandas as pd\nfrom IPython.core.interactiveshell import InteractiveShell\nInteractiveShell.ast_node_interactivity = \"all\"\n%%HTML\n<style type=\"text/css\">\ntable.dataframe td, table.dataframe th {\n    border: 1px  black solid !important;\n  color: black !important;\n}\n</style>"
   },
   {
     "href": "rmd\\programming\\python\\frequent-function.html#编辑器显示问题",
     "title": "常用方法",
     "section": "编辑器显示问题",
-    "text": "打印非科学计数\n\n\npd.set_option('display.float_format',lambda x : '%.2f' % x)"
+    "text": "打印非科学计数\n\npd.set_option('display.float_format',lambda x : '%.2f' % x)"
   },
   {
     "href": "rmd\\programming\\python\\frequent-function.html#参考",
     "title": "常用方法",
     "section": "参考",
-    "text": "pandarallel\nparatext\nPython 数据分析\n颜色色卡\n读取 druid"
+    "text": "pandarallel\nparatext\nPython 数据分析\n颜色色卡\nLets-Plot\n读取 druid\nPacktPublishing"
   },
   {
     "href": "rmd\\programming\\python\\pytorch.html",
@@ -162,6 +162,12 @@
     "text": "访问shiny 官网，注册并登录;\n\n\nemail : ruiqiang@my.swjtu.edu.cn\nusername : jiaoruiqiang\n\n\n加载 rsconnect 包，并应用其中的函数 deployApp 进行发布.\n\nThe R Graph Gallery"
   },
   {
+    "href": "rmd\\programming\\R\\about.html#参考",
+    "title": "常用方法",
+    "section": "参考",
+    "text": "ggplot2-book"
+  },
+  {
     "href": "rmd\\programming\\software\\latex.html",
     "title": "LaTex",
     "section": "",
@@ -178,6 +184,12 @@
     "title": "Vim",
     "section": "参考",
     "text": "VIM 中文帮助手册\nLearning Vim"
+  },
+  {
+    "href": "rmd\\programming\\spark\\frequent-function.html#合并多个-df",
+    "title": "常用方法",
+    "section": "合并多个 df",
+    "text": "from functools import reduce\nfrom pyspark.sql import DataFrame\ndf = reduce(DataFrame.unionAll, dfs)"
   },
   {
     "href": "rmd\\programming\\spark\\hadoop.html#文件操作",

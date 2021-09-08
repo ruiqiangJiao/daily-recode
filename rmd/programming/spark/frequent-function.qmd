@@ -1,0 +1,15 @@
+---
+title: "常用方法"
+jupyter: python3
+---
+
+
+## 合并多个 **df**
+
+
+```python
+from functools import reduce
+from pyspark.sql import DataFrame
+df = reduce(DataFrame.unionAll, dfs)
+```
+

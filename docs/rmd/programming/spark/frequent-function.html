@@ -3,7 +3,7 @@
   <meta charset="utf-8">
   <meta name="generator" content="quarto-99.9.9">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-  <title>日常记录 – MySQL</title>
+  <title>日常记录 – 常用方法</title>
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
@@ -85,8 +85,8 @@
   <script src="../../../site_libs/quarto-search/autocomplete.min.js"></script>
   <script src="../../../site_libs/quarto-search/fuse.min.js"></script>
   <script src="../../../site_libs/quarto-search/quarto-search.js"></script>
-  <link href="../../../rmd/programming/leetcode/refrence.html" rel="next">
-  <link href="../../../rmd/programming/spark/frequent-function.html" rel="prev">
+  <link href="../../../rmd/programming/SQL/MySQL.html" rel="next">
+  <link href="../../../rmd/programming/spark/hive.html" rel="prev">
   <script src="../../../site_libs/quarto-html/quarto.js"></script>
   <script src="../../../site_libs/quarto-html/popper.min.js"></script>
   <script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -234,7 +234,7 @@
 </nav>
 <nav class="quarto-secondary-nav py-2 d-lg-none d-md-block " data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <div class="container-fluid d-flex justify-content-between">
-    <h1 class="quarto-secondary-nav-title mb-0 fs-3 d-inline">MySQL</h1>
+    <h1 class="quarto-secondary-nav-title mb-0 fs-3 d-inline">常用方法</h1>
     <button type="button" class="quarto-btn-toggle btn d-lg-none py-0 px-1 d-inline-block border-0 ">
       <i class="bi bi-chevron-right"></i>
     </button>
@@ -337,7 +337,7 @@
   <a href="../../../rmd/programming/spark/hive.html" class="">Hive</a>
 </li>
           <li class="sidebar-item">
-  <a href="../../../rmd/programming/spark/frequent-function.html" class="">常用方法</a>
+  <a href="../../../rmd/programming/spark/frequent-function.html" class="active">常用方法</a>
 </li>
         </ul>
       </div>
@@ -354,7 +354,7 @@
       <div class="collapse  show" id="sql-collapse">
         <ul class="list-unstyled sidebar-item-contents">
           <li class="sidebar-item">
-  <a href="../../../rmd/programming/SQL/MySQL.html" class="active">MySQL</a>
+  <a href="../../../rmd/programming/SQL/MySQL.html" class="">MySQL</a>
 </li>
         </ul>
       </div>
@@ -421,46 +421,20 @@
   <div id="quarto-toc-sidebar" class=" pt-0 col col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-toc order-last"><nav id="TOC" role="doc-toc">
 <h2 id="toc-title">On this page</h2>
 <ul>
-<li><a href="#合并两个-sql-查询" class="nav-link active" data-scroll-target="#合并两个-sql-查询">合并两个 SQL 查询</a></li>
-<li><a href="#每日新增" class="nav-link" data-scroll-target="#每日新增">每日新增</a></li>
+<li><a href="#合并多个-df" class="nav-link active" data-scroll-target="#合并多个-df">合并多个 <strong>df</strong></a></li>
 </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/ruiqiangJiao/daily-recode/edit/main/rmd\programming\SQL\MySQL.qmd" class="toc-action">Edit this page</a></p></div></div></nav></div>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/ruiqiangJiao/daily-recode/edit/main/rmd\programming\spark\frequent-function.qmd" class="toc-action">Edit this page</a></p></div></div></nav></div>
   <div class="col mx-auto col-sm-12 col-md-9 col-lg-7 col-xl-7 px-lg-4 pe-xxl-4 ps-xxl-0">
 <main>
 <header id="title-block-header">
-<h1 class="title d-none d-lg-block display-7">MySQL</h1>
+<h1 class="title d-none d-lg-block display-7">常用方法</h1>
 </header>
 
-<section id="合并两个-sql-查询" class="level2">
-<h2 class="anchored" data-anchor-id="合并两个-sql-查询">合并两个 SQL 查询</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> get.daytime, get.<span class="kw">data</span> <span class="kw">as</span> get, xh.<span class="kw">data</span> <span class="kw">as</span> xh </span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>        <span class="kw">FROM</span> ( </span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>                <span class="kw">SELECT</span> daytime, <span class="fu">sum</span>(get_sum) <span class="kw">as</span> <span class="kw">data</span> </span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>                <span class="kw">FROM</span> yuanbao_get </span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>                <span class="kw">group</span> <span class="kw">by</span> daytime </span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>                <span class="kw">order</span> <span class="kw">by</span> daytime </span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>        ) <span class="kw">as</span> get, </span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>        ( </span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>                <span class="kw">SELECT</span> daytime, <span class="fu">sum</span>(xh_sum) <span class="kw">as</span> <span class="kw">data</span> </span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>                <span class="kw">FROM</span> yuanbao_xh </span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>                <span class="kw">group</span> <span class="kw">by</span> daytime </span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>                <span class="kw">order</span> <span class="kw">by</span> daytime </span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>        ) <span class="kw">as</span> xh </span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>        <span class="kw">where</span> get.daytime <span class="op">=</span> xh.daytime</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="每日新增" class="level2">
-<h2 class="anchored" data-anchor-id="每日新增">每日新增</h2>
-<div class="sourceCode" id="cb2"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">select</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  min_date,<span class="fu">count</span>(<span class="kw">distinct</span> user_id) <span class="kw">as</span> per_day_new</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="kw">from</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>(</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="kw">select</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    user_id,</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">min</span>(log_date) <span class="kw">as</span> min_date</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  <span class="kw">from</span> <span class="kw">table</span></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>  <span class="kw">group</span> <span class="kw">by</span> user_id</span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>)t</span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="kw">group</span> <span class="kw">by</span> min_date</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="合并多个-df" class="level2">
+<h2 class="anchored" data-anchor-id="合并多个-df">合并多个 <strong>df</strong></h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> functools <span class="im">import</span> <span class="bu">reduce</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pyspark.sql <span class="im">import</span> DataFrame</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> <span class="bu">reduce</span>(DataFrame.unionAll, dfs)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 <!-- -->
 </section>
@@ -536,13 +510,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </main>
 <div class="page-navigation page-navigation-docked">
   <div class="nav-page nav-page-previous">
-      <a href="../../../rmd/programming/spark/frequent-function.html">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">常用方法</span>
+      <a href="../../../rmd/programming/spark/hive.html">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Hive</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../../rmd/programming/leetcode/refrence.html">
-        <span class="nav-page-text">Leet code 参考资料</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../../rmd/programming/SQL/MySQL.html">
+        <span class="nav-page-text">MySQL</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </div>

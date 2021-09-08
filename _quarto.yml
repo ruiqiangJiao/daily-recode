@@ -48,6 +48,7 @@ site:
           - rmd/programming/spark/submit-run-task.qmd
           - rmd/programming/spark/hadoop.qmd
           - rmd/programming/spark/hive.qmd
+          - rmd/programming/spark/frequent-function.qmd
         - section: "SQL"
           contents:
           - rmd/programming/SQL/MySQL.qmd

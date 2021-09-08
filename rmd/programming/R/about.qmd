@@ -14,3 +14,8 @@ jupyter: python3
 2. 加载 rsconnect 包，并应用其中的函数 deployApp 进行发布.
 
 [The R Graph Gallery](https://www.r-graph-gallery.com/)
+
+
+## 参考
+
+[ggplot2-book](https://ggplot2-book.org/)
