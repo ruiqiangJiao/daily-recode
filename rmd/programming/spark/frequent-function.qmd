@@ -13,3 +13,77 @@ from pyspark.sql import DataFrame
 df = reduce(DataFrame.unionAll, dfs)
 ```
 
+## 解析嵌套 Json
+
+```python
+def flatten_df(nested_df):
+    for col in nested_df.columns:
+        array_cols = [c[0]  for c in nested_df.dtypes if c[1][:5] == 'array']
+    for col in array_cols:
+        nested_df = nested_df.withColumn(col, F.explode_outer(nested_df[col]))
+    nested_cols = [c[0] for c in nested_df.dtypes if c[1][:6] == 'struct']
+    if len(nested_cols) == 0:
+        return nested_df
+    flat_cols = [c[0] for c in nested_df.dtypes if c[1][:6] != 'struct']
+    flat_df = nested_df.select(flat_cols +
+                        [F.col(nc+'.'+c).alias(nc+'_'+c)
+                            for nc in nested_cols
+                            for c in nested_df.select(nc+'.*').columns])
+    return flatten_df(flat_df)
+```
+
+## DataFrame 添加字段
+
+### 添加单个字段
+
+```python
+df_2 = df_1.withColumn("c1", functions.UserDefinedFunction(get_feature)(df_1.c0))
+```
+
+### 添加多列字段
+
+```python
+import pyspark.sql.functions as F
+import pyspark.sql.types as t
+def f_udf(s):
+    return t.Row("f11", "f12")(s+1, s+2)
+
+corr_schema = t.StructType([t.StructField('c1', t.FloatType(), False),
+                                t.StructField('c3', t.FloatType(), False),
+                                t.StructField('c4', t.FloatType(), False),
+                                t.StructField('c5', t.FloatType(), False)])
+corr_udf = F.udf(get_feature, corr_schema)
+df_3 = df_3.withColumn("f1", F.explode(F.array(f_udf(df_2["c1"]))))
+df_3.select(*, "f1.*")
+```
+
+### 列表转化JSON
+
+```python
+from pyspark.sql.functions import col, to_json, struct
+df_4 = df_3.withColumn("f", to_json(struct(df_3.f1)))
+```
+
+## 读取 Hdfs 路径
+
+```python
+d = os.popen("hadoop fs -ls hdfs://prodcluster/user/" + date + "/ | awk '{print $8}' ").read().split('\n')
+for dd in d:
+    if dd.startswith("hdfs:"):
+        dd_list = dd.split("{0}/".format(date))
+        mv_ = dd_list[0] + date + "/" + dd_list[1].replace(".part", 'part')
+        mv_run = "hadoop fs -mv {0} {1}".format(dd, mv_)
+        print(mv_run)
+        os.system(mv_run)
+     else:
+         pass
+```
+
+## DataFrame 多列聚合计算
+
+
+```python
+expressions = [F.expr('percentile({0}, Array(0.2, 0.5, 0.75, 0.8, 0.9, 0.95, 0.98)) as {0}'.format(col)).alias('%s'%(col)) for col in ["c1", "c2", "c3", "c4", "c4"]]
+d1 = d0.groupby("terminal_name").agg(*expressions)
+```
+

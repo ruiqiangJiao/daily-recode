@@ -192,6 +192,7 @@
     "text": "VIM 中文帮助手册\nLearning Vim"
   },
   {
+    "objectID": "rmd\\programming\\spark\\frequent-function.html#合并多个-df",
     "href": "rmd\\programming\\spark\\frequent-function.html#合并多个-df",
     "title": "常用方法",
     "section": "合并多个 df",
@@ -280,5 +281,33 @@
     "title": "MySQL",
     "section": "每日新增",
     "text": "select\n  min_date,count(distinct user_id) as per_day_new\nfrom\n(\n  select\n    user_id,\n    min(log_date) as min_date\n  from table\n  group by user_id\n)t\ngroup by min_date"
+  },
+  {
+    "objectID": "rmd\\programming\\spark\\frequent-function.html#解析嵌套-json",
+    "href": "rmd\\programming\\spark\\frequent-function.html#解析嵌套-json",
+    "title": "常用方法",
+    "section": "解析嵌套 Json",
+    "text": "def flatten_df(nested_df):\n    for col in nested_df.columns:\n        array_cols = [c[0]  for c in nested_df.dtypes if c[1][:5] == 'array']\n    for col in array_cols:\n        nested_df = nested_df.withColumn(col, F.explode_outer(nested_df[col]))\n    nested_cols = [c[0] for c in nested_df.dtypes if c[1][:6] == 'struct']\n    if len(nested_cols) == 0:\n        return nested_df\n    flat_cols = [c[0] for c in nested_df.dtypes if c[1][:6] != 'struct']\n    flat_df = nested_df.select(flat_cols +\n                        [F.col(nc+'.'+c).alias(nc+'_'+c)\n                            for nc in nested_cols\n                            for c in nested_df.select(nc+'.*').columns])\n    return flatten_df(flat_df)"
+  },
+  {
+    "objectID": "rmd\\programming\\spark\\frequent-function.html#dataframe-添加字段",
+    "href": "rmd\\programming\\spark\\frequent-function.html#dataframe-添加字段",
+    "title": "常用方法",
+    "section": "DataFrame 添加字段",
+    "text": "添加单个字段\ndf_2 = df_1.withColumn(\"c1\", functions.UserDefinedFunction(get_feature)(df_1.c0))\n\n\n添加多列字段\nimport pyspark.sql.functions as F\nimport pyspark.sql.types as t\ndef f_udf(s):\n    return t.Row(\"f11\", \"f12\")(s+1, s+2)\n\ncorr_schema = t.StructType([t.StructField('c1', t.FloatType(), False),\n                                t.StructField('c3', t.FloatType(), False),\n                                t.StructField('c4', t.FloatType(), False),\n                                t.StructField('c5', t.FloatType(), False)])\ncorr_udf = F.udf(get_feature, corr_schema)\ndf_3 = df_3.withColumn(\"f1\", F.explode(F.array(f_udf(df_2[\"c1\"]))))\ndf_3.select(*, \"f1.*\")\n\n\n列表转化JSON\nfrom pyspark.sql.functions import col, to_json, struct\ndf_4 = df_3.withColumn(\"f\", to_json(struct(df_3.f1)))"
+  },
+  {
+    "objectID": "rmd\\programming\\spark\\frequent-function.html#读取-hdfs-路径",
+    "href": "rmd\\programming\\spark\\frequent-function.html#读取-hdfs-路径",
+    "title": "常用方法",
+    "section": "读取 Hdfs 路径",
+    "text": "d = os.popen(\"hadoop fs -ls hdfs://prodcluster/user/\" + date + \"/ | awk '{print $8}' \").read().split('\\n')\nfor dd in d:\n    if dd.startswith(\"hdfs:\"):\n        dd_list = dd.split(\"{0}/\".format(date))\n        mv_ = dd_list[0] + date + \"/\" + dd_list[1].replace(\".part\", 'part')\n        mv_run = \"hadoop fs -mv {0} {1}\".format(dd, mv_)\n        print(mv_run)\n        os.system(mv_run)\n     else:\n         pass"
+  },
+  {
+    "objectID": "rmd\\programming\\spark\\frequent-function.html#dataframe-多列聚合计算",
+    "href": "rmd\\programming\\spark\\frequent-function.html#dataframe-多列聚合计算",
+    "title": "常用方法",
+    "section": "DataFrame 多列聚合计算",
+    "text": "expressions = [F.expr('percentile({0}, Array(0.2, 0.5, 0.75, 0.8, 0.9, 0.95, 0.98)) as {0}'.format(col)).alias('%s'%(col)) for col in [\"c1\", \"c2\", \"c3\", \"c4\", \"c4\"]]\nd1 = d0.groupby(\"terminal_name\").agg(*expressions)"
   }
 ]
