@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang=""><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
   <meta charset="utf-8">
   <meta name="generator" content="quarto-99.9.9">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-  <title>日常记录 – 常用方法</title>
+  <title>日常记录 - 常用方法</title>
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
@@ -76,13 +76,11 @@
     code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
   </style>
 
-  <!--[if lt IE 9]>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
-  <![endif]-->
   <script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
   <script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+  <script src="../../../site_libs/clipboard/clipboard.min.js"></script>
   <meta name="quarto:offset" content="../../../">
-  <script src="../../../site_libs/quarto-search/autocomplete.min.js"></script>
+  <script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
   <script src="../../../site_libs/quarto-search/fuse.min.js"></script>
   <script src="../../../site_libs/quarto-search/quarto-search.js"></script>
   <link href="../../../rmd/programming/python/pytorch.html" rel="next">
@@ -90,31 +88,52 @@
   <script src="../../../site_libs/quarto-html/quarto.js"></script>
   <script src="../../../site_libs/quarto-html/popper.min.js"></script>
   <script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
-  <script src="../../../site_libs/quarto-html/clipboard.min.js"></script>
   <script src="../../../site_libs/quarto-html/anchor.min.js"></script>
   <link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
   <link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet">
   <script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
   <link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
   <link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet">
+  <script id="quarto-search-options" type="application/json">{
+    "location": "navbar",
+    "copy-button": false,
+    "collapse-after": 2,
+    "panel-placement": "end",
+    "type": "overlay",
+    "limit": 20,
+    "language": {
+      "search-no-results-text": "No results",
+      "search-matching-documents-text": "matching documents",
+      "search-copy-link-title": "Copy link to search",
+      "search-hide-matches-text": "Hide additional matches",
+      "search-more-match-text": "more match in this document",
+      "search-more-matches-text": "more matches in this document",
+      "search-clear-button-title": "Clear",
+      "search-detached-cancel-button-title": "Cancel",
+      "search-submit-button-title": "Submit"
+    }
+  }</script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
   <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
   <link rel="stylesheet" href="../../../styles.css">
 </head>
-<body>
+<body class="docked">
 <div id="quarto-search-results"></div>
-<header id="quarto-header" class="headroom fixed-top">
-<nav class="navbar navbar-expand-lg navbar-light ">
-    <div class="container-fluid">
-  <a class="navbar-brand" href="../../../index.html">
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <a class="navbar-brand" href="../../../index.html">
     <span class="navbar-title">日常记录</span>
   </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
-      <div class="collapse navbar-collapse" id="navbarCollapse">
-        <ul class="navbar-nav navbar-nav-scroll me-auto">
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
     <a class="nav-link" href="../../../index.html">主页</a>
   </li>  
@@ -129,72 +148,90 @@
     <ul class="dropdown-menu" aria-labelledby="nav-menu-">    
         <li class="dropdown-header">python</li>
         <li>
-    <a class="dropdown-item" href="../../../rmd/programming/python/read-redis-cluster.html">读取 Redis 集群</a>
+    <a class="dropdown-item" href="../../../rmd/programming/python/read-redis-cluster.html">
+ <span class="dropdown-text">读取 Redis 集群</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../../rmd/programming/python/read-mysql.html">读取 MySQL</a>
+    <a class="dropdown-item" href="../../../rmd/programming/python/read-mysql.html">
+ <span class="dropdown-text">读取 MySQL</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../../rmd/programming/python/frequent-function.html">常用方法</a>
+    <a class="dropdown-item" href="../../../rmd/programming/python/frequent-function.html">
+ <span class="dropdown-text">常用方法</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../../rmd/programming/python/pytorch.html">pytorch 参考</a>
+    <a class="dropdown-item" href="../../../rmd/programming/python/pytorch.html">
+ <span class="dropdown-text">pytorch 参考</span></a>
   </li>  
         <li><hr class="dropdown-divider"></li>
         <li class="dropdown-header">R</li>
         <li>
-    <a class="dropdown-item" href="../../../rmd/programming/R/about.html">常用方法</a>
+    <a class="dropdown-item" href="../../../rmd/programming/R/about.html">
+ <span class="dropdown-text">常用方法</span></a>
   </li>  
         <li><hr class="dropdown-divider"></li>
         <li class="dropdown-header">git</li>
         <li>
-    <a class="dropdown-item" href="../../../rmd/programming/git/refrence.html">参考</a>
+    <a class="dropdown-item" href="../../../rmd/programming/git/refrence.html">
+ <span class="dropdown-text">参考</span></a>
   </li>  
         <li><hr class="dropdown-divider"></li>
         <li class="dropdown-header">spark</li>
         <li>
-    <a class="dropdown-item" href="../../../rmd/programming/spark/install.html">安装</a>
+    <a class="dropdown-item" href="../../../rmd/programming/spark/install.html">
+ <span class="dropdown-text">安装</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../../rmd/programming/spark/read-hbase.html">读取 Hbase</a>
+    <a class="dropdown-item" href="../../../rmd/programming/spark/read-hbase.html">
+ <span class="dropdown-text">读取 Hbase</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../../rmd/programming/spark/read-mysql.html">读取 MySQL</a>
+    <a class="dropdown-item" href="../../../rmd/programming/spark/read-mysql.html">
+ <span class="dropdown-text">读取 MySQL</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../../rmd/programming/spark/submit-run-task.html">服务器提交运行任务</a>
+    <a class="dropdown-item" href="../../../rmd/programming/spark/submit-run-task.html">
+ <span class="dropdown-text">服务器提交运行任务</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../../rmd/programming/spark/hadoop.html">hadoop 常用命令</a>
+    <a class="dropdown-item" href="../../../rmd/programming/spark/hadoop.html">
+ <span class="dropdown-text">hadoop 常用命令</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../../rmd/programming/spark/hive.html">Hive</a>
+    <a class="dropdown-item" href="../../../rmd/programming/spark/hive.html">
+ <span class="dropdown-text">Hive</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../../rmd/programming/spark/frequent-function.html">常用方法</a>
+    <a class="dropdown-item" href="../../../rmd/programming/spark/frequent-function.html">
+ <span class="dropdown-text">常用方法</span></a>
   </li>  
         <li><hr class="dropdown-divider"></li>
         <li class="dropdown-header">SQL</li>
         <li>
-    <a class="dropdown-item" href="../../../rmd/programming/SQL/MySQL.html">MySQL</a>
+    <a class="dropdown-item" href="../../../rmd/programming/SQL/MySQL.html">
+ <span class="dropdown-text">MySQL</span></a>
   </li>  
         <li><hr class="dropdown-divider"></li>
         <li class="dropdown-header">Leet code</li>
         <li>
-    <a class="dropdown-item" href="../../../rmd/programming/leetcode/refrence.html">Leet code 参考资料</a>
+    <a class="dropdown-item" href="../../../rmd/programming/leetcode/refrence.html">
+ <span class="dropdown-text">Leet code 参考资料</span></a>
   </li>  
         <li><hr class="dropdown-divider"></li>
         <li class="dropdown-header">软件</li>
         <li>
-    <a class="dropdown-item" href="../../../rmd/programming/software/vim.html">Vim</a>
+    <a class="dropdown-item" href="../../../rmd/programming/software/vim.html">
+ <span class="dropdown-text">Vim</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../../rmd/programming/software/latex.html">LaTex</a>
+    <a class="dropdown-item" href="../../../rmd/programming/software/latex.html">
+ <span class="dropdown-text">LaTex</span></a>
   </li>  
         <li><hr class="dropdown-divider"></li>
         <li class="dropdown-header">Linux</li>
         <li>
-    <a class="dropdown-item" href="../../../rmd/programming/linux/frequent-function.html">linux 常用命令</a>
+    <a class="dropdown-item" href="../../../rmd/programming/linux/frequent-function.html">
+ <span class="dropdown-text">linux 常用命令</span></a>
   </li>  
     </ul>
   </li>
@@ -203,225 +240,237 @@
     <ul class="dropdown-menu" aria-labelledby="nav-menu--1">    
         <li class="dropdown-header">统计学</li>
         <li>
-    <a class="dropdown-item" href="../../../rmd/algorithm/statistics/elements_of_statistical_learning.html">The Elements of Statistical Learning</a>
+    <a class="dropdown-item" href="../../../rmd/algorithm/statistics/elements_of_statistical_learning.html">
+ <span class="dropdown-text">The Elements of Statistical Learning</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../../rmd/algorithm/statistics/isolation_forest.html">孤立森林</a>
+    <a class="dropdown-item" href="../../../rmd/algorithm/statistics/isolation_forest.html">
+ <span class="dropdown-text">孤立森林</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../../rmd/algorithm/statistics/lof.html">局部离群因子</a>
+    <a class="dropdown-item" href="../../../rmd/algorithm/statistics/lof.html">
+ <span class="dropdown-text">局部离群因子</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../../rmd/algorithm/statistics/XGboost.html">XGboost</a>
+    <a class="dropdown-item" href="../../../rmd/algorithm/statistics/XGboost.html">
+ <span class="dropdown-text">XGboost</span></a>
   </li>  
         <li><hr class="dropdown-divider"></li>
         <li class="dropdown-header">强化学习</li>
         <li>
-    <a class="dropdown-item" href="../../../rmd/algorithm/reinforcement_learning/about.html">参考文档</a>
+    <a class="dropdown-item" href="../../../rmd/algorithm/reinforcement_learning/about.html">
+ <span class="dropdown-text">参考文档</span></a>
   </li>  
         <li><hr class="dropdown-divider"></li>
         <li class="dropdown-header">深度学习</li>
         <li>
-    <a class="dropdown-item" href="../../../rmd/algorithm/deep_learning/dive_into_deep_learning.html">动手学深度学习</a>
+    <a class="dropdown-item" href="../../../rmd/algorithm/deep_learning/dive_into_deep_learning.html">
+ <span class="dropdown-text">动手学深度学习</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../rmd/algorithm/deep_learning/deep_learning_flower.html">
+ <span class="dropdown-text">deep_learning_flower.html</span></a>
   </li>  
         <li><hr class="dropdown-divider"></li>
         <li class="dropdown-header">其它</li>
     </ul>
   </li>
 </ul>
-          <form class="d-flex mb-0">
-  <input id="quarto-search" class="form-control" type="search" placeholder="Search" aria-label="Search">
-</form>
-      </div> <!-- /navcollapse -->
-  </div> <!-- /container-fluid -->
-</nav>
-<nav class="quarto-secondary-nav py-2 d-lg-none d-md-block " data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-  <div class="container-fluid d-flex justify-content-between">
-    <h1 class="quarto-secondary-nav-title mb-0 fs-3 d-inline">常用方法</h1>
-    <button type="button" class="quarto-btn-toggle btn d-lg-none py-0 px-1 d-inline-block border-0 ">
-      <i class="bi bi-chevron-right"></i>
-    </button>
-  </div>
-</nav>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title">常用方法</h1>
+      <button type="button" class="quarto-btn-toggle btn">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
 </header>
- <!-- /navbar/sidebar -->
-<div class="container-fluid quarto-container d-flex flex-column page-layout-article">
-<div class="row flex-fill" id="quarto-content">
-  <div id="quarto-sidebar" class="col col-12 col-lg-3 d-lg-flex px-0 pt-0 sidebar collapse sidebar-navigation">
-    <nav class="me-lg-auto docked overflow-auto">
-  <div class="sidebar-menu-container"> 
-  <ul class="list-unstyled mt-1 px-3">
-      <ul class="list-unstyled sidebar-section depth1">
-    <li class="">
-        <div class="me-auto">
-            <a class="sidebar-section-item d-inline-flex text-start w-100 " data-bs-toggle="collapse" data-bs-target="#python-collapse" aria-expanded="true">
-              <div class="me-auto sidebar-section-item">python</div>
-            <div><i class="bi bi-chevron-right ms-2"></i></div>
-            </a>
-        </div>
-      <div class="collapse  show" id="python-collapse">
-        <ul class="list-unstyled sidebar-item-contents">
-          <li class="sidebar-item">
-  <a href="../../../rmd/programming/python/read-redis-cluster.html" class="">读取 Redis 集群</a>
-</li>
-          <li class="sidebar-item">
-  <a href="../../../rmd/programming/python/read-mysql.html" class="">读取 MySQL</a>
-</li>
-          <li class="sidebar-item">
-  <a href="../../../rmd/programming/python/frequent-function.html" class="active">常用方法</a>
-</li>
-          <li class="sidebar-item">
-  <a href="../../../rmd/programming/python/pytorch.html" class="">pytorch 参考</a>
-</li>
-        </ul>
-      </div>
-    </li>
-  </ul>
-      <ul class="list-unstyled sidebar-section depth1">
-    <li class="">
-        <div class="me-auto">
-            <a class="sidebar-section-item d-inline-flex text-start w-100 " data-bs-toggle="collapse" data-bs-target="#r-collapse" aria-expanded="true">
-              <div class="me-auto sidebar-section-item">R</div>
-            <div><i class="bi bi-chevron-right ms-2"></i></div>
-            </a>
-        </div>
-      <div class="collapse  show" id="r-collapse">
-        <ul class="list-unstyled sidebar-item-contents">
-          <li class="sidebar-item">
-  <a href="../../../rmd/programming/R/about.html" class="">常用方法</a>
-</li>
-        </ul>
-      </div>
-    </li>
-  </ul>
-      <ul class="list-unstyled sidebar-section depth1">
-    <li class="">
-        <div class="me-auto">
-            <a class="sidebar-section-item d-inline-flex text-start w-100 " data-bs-toggle="collapse" data-bs-target="#git-collapse" aria-expanded="true">
-              <div class="me-auto sidebar-section-item">git</div>
-            <div><i class="bi bi-chevron-right ms-2"></i></div>
-            </a>
-        </div>
-      <div class="collapse  show" id="git-collapse">
-        <ul class="list-unstyled sidebar-item-contents">
-          <li class="sidebar-item">
-  <a href="../../../rmd/programming/git/refrence.html" class="">参考</a>
-</li>
-        </ul>
-      </div>
-    </li>
-  </ul>
-      <ul class="list-unstyled sidebar-section depth1">
-    <li class="">
-        <div class="me-auto">
-            <a class="sidebar-section-item d-inline-flex text-start w-100 " data-bs-toggle="collapse" data-bs-target="#spark-collapse" aria-expanded="true">
-              <div class="me-auto sidebar-section-item">spark</div>
-            <div><i class="bi bi-chevron-right ms-2"></i></div>
-            </a>
-        </div>
-      <div class="collapse  show" id="spark-collapse">
-        <ul class="list-unstyled sidebar-item-contents">
-          <li class="sidebar-item">
-  <a href="../../../rmd/programming/spark/install.html" class="">安装</a>
-</li>
-          <li class="sidebar-item">
-  <a href="../../../rmd/programming/spark/read-hbase.html" class="">读取 Hbase</a>
-</li>
-          <li class="sidebar-item">
-  <a href="../../../rmd/programming/spark/read-mysql.html" class="">读取 MySQL</a>
-</li>
-          <li class="sidebar-item">
-  <a href="../../../rmd/programming/spark/submit-run-task.html" class="">服务器提交运行任务</a>
-</li>
-          <li class="sidebar-item">
-  <a href="../../../rmd/programming/spark/hadoop.html" class="">hadoop 常用命令</a>
-</li>
-          <li class="sidebar-item">
-  <a href="../../../rmd/programming/spark/hive.html" class="">Hive</a>
-</li>
-          <li class="sidebar-item">
-  <a href="../../../rmd/programming/spark/frequent-function.html" class="">常用方法</a>
-</li>
-        </ul>
-      </div>
-    </li>
-  </ul>
-      <ul class="list-unstyled sidebar-section depth1">
-    <li class="">
-        <div class="me-auto">
-            <a class="sidebar-section-item d-inline-flex text-start w-100 " data-bs-toggle="collapse" data-bs-target="#sql-collapse" aria-expanded="true">
-              <div class="me-auto sidebar-section-item">SQL</div>
-            <div><i class="bi bi-chevron-right ms-2"></i></div>
-            </a>
-        </div>
-      <div class="collapse  show" id="sql-collapse">
-        <ul class="list-unstyled sidebar-item-contents">
-          <li class="sidebar-item">
-  <a href="../../../rmd/programming/SQL/MySQL.html" class="">MySQL</a>
-</li>
-        </ul>
-      </div>
-    </li>
-  </ul>
-      <ul class="list-unstyled sidebar-section depth1">
-    <li class="">
-        <div class="me-auto">
-            <a class="sidebar-section-item d-inline-flex text-start w-100 " data-bs-toggle="collapse" data-bs-target="#leetcode-collapse" aria-expanded="true">
-              <div class="me-auto sidebar-section-item">Leet code</div>
-            <div><i class="bi bi-chevron-right ms-2"></i></div>
-            </a>
-        </div>
-      <div class="collapse  show" id="leetcode-collapse">
-        <ul class="list-unstyled sidebar-item-contents">
-          <li class="sidebar-item">
-  <a href="../../../rmd/programming/leetcode/refrence.html" class="">Leet code 参考资料</a>
-</li>
-        </ul>
-      </div>
-    </li>
-  </ul>
-      <ul class="list-unstyled sidebar-section depth1">
-    <li class="">
-        <div class="me-auto">
-            <a class="sidebar-section-item d-inline-flex text-start w-100 " data-bs-toggle="collapse" data-bs-target="#软件-collapse" aria-expanded="true">
-              <div class="me-auto sidebar-section-item">软件</div>
-            <div><i class="bi bi-chevron-right ms-2"></i></div>
-            </a>
-        </div>
-      <div class="collapse  show" id="软件-collapse">
-        <ul class="list-unstyled sidebar-item-contents">
-          <li class="sidebar-item">
-  <a href="../../../rmd/programming/software/vim.html" class="">Vim</a>
-</li>
-          <li class="sidebar-item">
-  <a href="../../../rmd/programming/software/latex.html" class="">LaTex</a>
-</li>
-        </ul>
-      </div>
-    </li>
-  </ul>
-      <ul class="list-unstyled sidebar-section depth1">
-    <li class="">
-        <div class="me-auto">
-            <a class="sidebar-section-item d-inline-flex text-start w-100 " data-bs-toggle="collapse" data-bs-target="#linux-collapse" aria-expanded="true">
-              <div class="me-auto sidebar-section-item">Linux</div>
-            <div><i class="bi bi-chevron-right ms-2"></i></div>
-            </a>
-        </div>
-      <div class="collapse  show" id="linux-collapse">
-        <ul class="list-unstyled sidebar-item-contents">
-          <li class="sidebar-item">
-  <a href="../../../rmd/programming/linux/frequent-function.html" class="">linux 常用命令</a>
-</li>
-        </ul>
-      </div>
-    </li>
-  </ul>
-  </ul>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+    <div class="sidebar-item-container"> 
+        <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-python" aria-expanded="true">python</a>
+      <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-python" aria-expanded="true">
+        <i class="bi bi-chevron-right ms-2"></i>
+      </a>
+    </div>
+    <ul id="quarto-sidebar-section-python" class="collapse list-unstyled sidebar-section depth1 show">  
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../rmd/programming/python/read-redis-cluster.html" class="sidebar-item-text sidebar-link">读取 Redis 集群</a>
   </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../rmd/programming/python/read-mysql.html" class="sidebar-item-text sidebar-link">读取 MySQL</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../rmd/programming/python/frequent-function.html" class="sidebar-item-text sidebar-link active">常用方法</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../rmd/programming/python/pytorch.html" class="sidebar-item-text sidebar-link">pytorch 参考</a>
+  </div>
+</li>
+    </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+    <div class="sidebar-item-container"> 
+        <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-r" aria-expanded="true">R</a>
+      <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-r" aria-expanded="true">
+        <i class="bi bi-chevron-right ms-2"></i>
+      </a>
+    </div>
+    <ul id="quarto-sidebar-section-r" class="collapse list-unstyled sidebar-section depth1 show">  
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../rmd/programming/R/about.html" class="sidebar-item-text sidebar-link">常用方法</a>
+  </div>
+</li>
+    </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+    <div class="sidebar-item-container"> 
+        <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-git" aria-expanded="true">git</a>
+      <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-git" aria-expanded="true">
+        <i class="bi bi-chevron-right ms-2"></i>
+      </a>
+    </div>
+    <ul id="quarto-sidebar-section-git" class="collapse list-unstyled sidebar-section depth1 show">  
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../rmd/programming/git/refrence.html" class="sidebar-item-text sidebar-link">参考</a>
+  </div>
+</li>
+    </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+    <div class="sidebar-item-container"> 
+        <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-spark" aria-expanded="true">spark</a>
+      <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-spark" aria-expanded="true">
+        <i class="bi bi-chevron-right ms-2"></i>
+      </a>
+    </div>
+    <ul id="quarto-sidebar-section-spark" class="collapse list-unstyled sidebar-section depth1 show">  
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../rmd/programming/spark/install.html" class="sidebar-item-text sidebar-link">安装</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../rmd/programming/spark/read-hbase.html" class="sidebar-item-text sidebar-link">读取 Hbase</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../rmd/programming/spark/read-mysql.html" class="sidebar-item-text sidebar-link">读取 MySQL</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../rmd/programming/spark/submit-run-task.html" class="sidebar-item-text sidebar-link">服务器提交运行任务</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../rmd/programming/spark/hadoop.html" class="sidebar-item-text sidebar-link">hadoop 常用命令</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../rmd/programming/spark/hive.html" class="sidebar-item-text sidebar-link">Hive</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../rmd/programming/spark/frequent-function.html" class="sidebar-item-text sidebar-link">常用方法</a>
+  </div>
+</li>
+    </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+    <div class="sidebar-item-container"> 
+        <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-sql" aria-expanded="true">SQL</a>
+      <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-sql" aria-expanded="true">
+        <i class="bi bi-chevron-right ms-2"></i>
+      </a>
+    </div>
+    <ul id="quarto-sidebar-section-sql" class="collapse list-unstyled sidebar-section depth1 show">  
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../rmd/programming/SQL/MySQL.html" class="sidebar-item-text sidebar-link">MySQL</a>
+  </div>
+</li>
+    </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+    <div class="sidebar-item-container"> 
+        <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-leet-code" aria-expanded="true">Leet code</a>
+      <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-leet-code" aria-expanded="true">
+        <i class="bi bi-chevron-right ms-2"></i>
+      </a>
+    </div>
+    <ul id="quarto-sidebar-section-leet-code" class="collapse list-unstyled sidebar-section depth1 show">  
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../rmd/programming/leetcode/refrence.html" class="sidebar-item-text sidebar-link">Leet code 参考资料</a>
+  </div>
+</li>
+    </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+    <div class="sidebar-item-container"> 
+        <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-" aria-expanded="true">软件</a>
+      <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-" aria-expanded="true">
+        <i class="bi bi-chevron-right ms-2"></i>
+      </a>
+    </div>
+    <ul id="quarto-sidebar-section-" class="collapse list-unstyled sidebar-section depth1 show">  
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../rmd/programming/software/vim.html" class="sidebar-item-text sidebar-link">Vim</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../rmd/programming/software/latex.html" class="sidebar-item-text sidebar-link">LaTex</a>
+  </div>
+</li>
+    </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+    <div class="sidebar-item-container"> 
+        <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-linux" aria-expanded="true">Linux</a>
+      <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-linux" aria-expanded="true">
+        <i class="bi bi-chevron-right ms-2"></i>
+      </a>
+    </div>
+    <ul id="quarto-sidebar-section-linux" class="collapse list-unstyled sidebar-section depth1 show">  
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../rmd/programming/linux/frequent-function.html" class="sidebar-item-text sidebar-link">linux 常用命令</a>
+  </div>
+</li>
+    </ul>
+  </li>
+    </ul>
+    </div>
 </nav>
-  </div>
-  <div id="quarto-toc-sidebar" class=" pt-0 col col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-toc order-last"><nav id="TOC" role="doc-toc">
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc">
 <h2 id="toc-title">On this page</h2>
 <ul>
 <li><a href="#分组排序" class="nav-link active" data-scroll-target="#分组排序">分组排序</a></li>
@@ -431,23 +480,24 @@
 <li><a href="#编辑器显示问题" class="nav-link" data-scroll-target="#编辑器显示问题">编辑器显示问题</a></li>
 <li><a href="#参考" class="nav-link" data-scroll-target="#参考">参考</a></li>
 </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/ruiqiangJiao/daily-recode/edit/main/rmd\programming\python\frequent-function.qmd" class="toc-action">Edit this page</a></p></div></div></nav></div>
-  <div class="col mx-auto col-sm-12 col-md-9 col-lg-7 col-xl-7 px-lg-4 pe-xxl-4 ps-xxl-0">
-<main>
-<header id="title-block-header">
-<h1 class="title d-none d-lg-block display-7">常用方法</h1>
-</header>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/ruiqiangJiao/daily-recode/edit/main/rmd\programming\python\frequent-function.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+<header id="title-block-header" class="quarto-title-block default">
+
+<div class="quarto-title"><h1 class="title d-none d-lg-block display-7">常用方法</h1></div></header>
 
 <section id="分组排序" class="level2">
 <h2 class="anchored" data-anchor-id="分组排序">分组排序</h2>
-<div class="cell">
+<div class="cell" data-execution_count="1">
 <div class="sourceCode" id="cb1"><pre class="sourceCode python cell-code code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame({<span class="st">'Sp'</span>:[<span class="st">'a'</span>,<span class="st">'b'</span>,<span class="st">'c'</span>,<span class="st">'d'</span>,<span class="st">'e'</span>,<span class="st">'f'</span>], <span class="st">'Mt'</span>:[<span class="st">'s1'</span>, <span class="st">'s1'</span>, <span class="st">'s2'</span>,<span class="st">'s2'</span>,<span class="st">'s2'</span>,<span class="st">'s3'</span>], <span class="st">'Value'</span>:[<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>], <span class="st">'Count'</span>:[<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">5</span>,<span class="dv">10</span>,<span class="dv">10</span>,<span class="dv">6</span>]})</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
+<div class="cell-output-display" data-execution_count="1">
 <div>
 
-<table class="dataframe table">
+<table class="dataframe table table-sm table-striped">
   <thead>
     <tr>
       <th></th>
@@ -505,12 +555,12 @@
 </div>
 </div>
 </div>
-<div class="cell">
+<div class="cell" data-execution_count="2">
 <div class="sourceCode" id="cb2"><pre class="sourceCode python cell-code code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>df.sort_values(<span class="st">'Count'</span>, ascending<span class="op">=</span><span class="va">False</span>).groupby(<span class="st">'Mt'</span>, as_index<span class="op">=</span><span class="va">False</span>).first()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
+<div class="cell-output-display" data-execution_count="2">
 <div>
 
-<table class="dataframe table">
+<table class="dataframe table table-sm table-striped">
   <thead>
     <tr>
       <th></th>
@@ -550,14 +600,14 @@
 </section>
 <section id="同一个组进行合并" class="level2">
 <h2 class="anchored" data-anchor-id="同一个组进行合并">同一个组进行合并</h2>
-<div class="cell">
+<div class="cell" data-execution_count="3">
 <div class="sourceCode" id="cb3"><pre class="sourceCode python cell-code code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>series <span class="op">=</span> df.groupby(by<span class="op">=</span><span class="st">'Mt'</span>,as_index<span class="op">=</span><span class="va">True</span>).<span class="bu">apply</span>(<span class="kw">lambda</span> p:[<span class="st">','</span>.join(p[<span class="st">'Sp'</span>])])</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>df_result <span class="op">=</span> pd.DataFrame({<span class="st">'Mt'</span>:series.index, <span class="st">'Sp'</span>: series.values})</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>df_result</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
+<div class="cell-output-display" data-execution_count="3">
 <div>
 
-<table class="dataframe table">
+<table class="dataframe table table-sm table-striped">
   <thead>
     <tr>
       <th></th>
@@ -592,7 +642,7 @@
 <ul>
 <li><strong>dateutil</strong></li>
 </ul>
-<div class="cell">
+<div class="cell" data-execution_count="4">
 <div class="sourceCode" id="cb4"><pre class="sourceCode python cell-code code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> datetime</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> dateutil <span class="im">import</span> rrule</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>today <span class="op">=</span> datetime.date.today()</span>
@@ -604,33 +654,33 @@
 <span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(months)</span>
 <span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(days)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-stdout">
-<pre><code>4
-47
-1423</code></pre>
+<pre><code>5
+54
+1639</code></pre>
 </div>
 </div>
 <ul>
 <li><strong>pandas</strong></li>
 </ul>
-<div class="cell">
+<div class="cell" data-execution_count="5">
 <div class="sourceCode" id="cb6"><pre class="sourceCode python cell-code code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd </span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> datetime , time</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>now <span class="op">=</span> datetime.datetime.now()</span>
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>ago <span class="op">=</span> now <span class="op">-</span> pd.tseries.offsets.DateOffset(months <span class="op">=</span> <span class="dv">4</span>)</span>
 <span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(ago)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-stdout">
-<pre><code>2021-05-08 14:59:37.888365</code></pre>
+<pre><code>2021-12-12 16:27:20.927865</code></pre>
 </div>
 </div>
 <ul>
 <li><strong>time</strong></li>
 </ul>
 <p>计算机使用时间戳和<strong>struct_time</strong>数组两种方式表示时间</p>
-<div class="cell">
+<div class="cell" data-execution_count="6">
 <div class="sourceCode" id="cb8"><pre class="sourceCode python cell-code code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> time</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(time.localtime(time.time()))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-stdout">
-<pre><code>time.struct_time(tm_year=2021, tm_mon=9, tm_mday=8, tm_hour=14, tm_min=59, tm_sec=37, tm_wday=2, tm_yday=251, tm_isdst=0)</code></pre>
+<pre><code>time.struct_time(tm_year=2022, tm_mon=4, tm_mday=12, tm_hour=16, tm_min=27, tm_sec=21, tm_wday=1, tm_yday=102, tm_isdst=0)</code></pre>
 </div>
 </div>
 <p>格式字符串中可以使用的日期和时间符号如下:</p>
@@ -650,9 +700,11 @@
 </section>
 <section id="jupyter-note-展示表格" class="level2">
 <h2 class="anchored" data-anchor-id="jupyter-note-展示表格">jupyter note 展示表格</h2>
+<div class="cell" data-execution_count="7">
 <div class="sourceCode" id="cb10"><pre class="sourceCode python cell-code code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> IPython.core.interactiveshell <span class="im">import</span> InteractiveShell</span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>InteractiveShell.ast_node_interactivity <span class="op">=</span> <span class="st">"all"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <div class="sourceCode" id="cb11"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>%%HTML</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;style</span> <span class="er">type</span><span class="ot">=</span><span class="st">"text/css"</span><span class="kw">&gt;</span></span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>table<span class="fu">.dataframe</span> td<span class="op">,</span> table<span class="fu">.dataframe</span> th {</span>
@@ -666,7 +718,9 @@
 <ul>
 <li>打印非科学计数</li>
 </ul>
+<div class="cell" data-execution_count="8">
 <div class="sourceCode" id="cb12"><pre class="sourceCode python cell-code code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>pd.set_option(<span class="st">'display.float_format'</span>,<span class="kw">lambda</span> x : <span class="st">'</span><span class="sc">%.2f</span><span class="st">'</span> <span class="op">%</span> x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
 <section id="参考" class="level2">
 <h2 class="anchored" data-anchor-id="参考">参考</h2>
@@ -678,8 +732,9 @@
 <p><a href="https://github.com/druid-io/pydruid">读取 druid</a></p>
 <p><a href="https://github.com/PacktPublishing">PacktPublishing</a></p>
 
-<!-- -->
+
 </section>
+</main> <!-- /main -->
 <script type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const icon = "";
@@ -708,22 +763,29 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     e.clearSelection();
   });
   function tippyHover(el, contentFn) {
-    window.tippy(el, {
+    const config = {
       allowHTML: true,
       content: contentFn,
       maxWidth: 500,
       delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
       placement: 'bottom-start'
-    }); 
+    };
+    window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
   for (var i=0; i<noterefs.length; i++) {
     const ref = noterefs[i];
     tippyHover(ref, function() {
-      const id = new URL(ref.getAttribute('href')).hash.replace(/^#/, "");
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
       return note.innerHTML;
     });
@@ -749,22 +811,19 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
-</main>
-<div class="page-navigation page-navigation-docked">
+<nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../../rmd/programming/python/read-mysql.html">
+      <a href="../../../rmd/programming/python/read-mysql.html" class="pagination-link">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">读取 MySQL</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../../rmd/programming/python/pytorch.html">
+      <a href="../../../rmd/programming/python/pytorch.html" class="pagination-link">
         <span class="nav-page-text">pytorch 参考</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
-</div>
-</div> <!-- /main column -->
-</div> <!-- /row -->
-</div> <!-- /container fluid -->
+</nav>
+</div> <!-- /content -->
 
 
 </body></html>

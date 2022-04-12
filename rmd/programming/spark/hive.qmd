@@ -38,3 +38,21 @@ hive中join的方式分为两种，一种是Common Join(Reduce阶段完成join)�
 ```sql
 select /*+MAPJOIN(a) */ a.start_level,b.* fromdim_level a join (select * fromtest) b where b.xx>=a.start_level and b.xx<end_level;
 ```
+
+### 读取
+
+```python
+from pyspark.sql import HiveContext
+conf = SparkConf()
+conf.setAppName('')
+conf.set('spark.serializer', 'org.apache.spark.serializer.KryoSerializer')
+conf.set('spark.kryoserializer.buffer.max', '512m')
+spark_session = SparkSession.builder.config(conf=conf).enableHiveSupport().getOrCreate()
+sc = spark_session.sparkContext
+hive_text = HiveContext(sc)
+hive_context= HiveContext(spark_session)
+df_sn_bi = hive_context.sql("select * from table")
+
+```
+
+

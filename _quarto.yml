@@ -77,6 +77,7 @@ site:
         - section: "深度学习"
           contents:
             - rmd/algorithm/deep_learning/dive_into_deep_learning.qmd
+            - rmd/algorithm/deep_learning/deep_learning_flower.qmd
         - section: "其它"
           contents:
             - rmd/algorithm/deep_learning/slam.qmd
